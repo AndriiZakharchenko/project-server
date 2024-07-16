@@ -1,92 +1,129 @@
-# nodejs-gmp-template
+# Node.js Global Mentoring Program - Module 3 EventEmitter / Buffer / Streams
 
-
+Link to [ebook](https://ebook.learn.epam.com/node-gmp/docs/event-emitter-vs-buffers-vs-streams/Homework).
 
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+1. Install the dependencies
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Run the following command in your project directory to install the necessary dependencies:
 
 ```
-cd existing_repo
-git remote add origin https://autocode.git.epam.com/ld-autocode-js-programs/nodejs-gmp/nodejs-gmp-template.git
-git branch -M main
-git push -uf origin main
+npm install
 ```
 
-## Integrate with your tools
+2. Implement the tasks
 
-- [ ] [Set up project integrations](https://autocode.git.epam.com/ld-autocode-js-programs/nodejs-gmp/nodejs-gmp-template/-/settings/integrations)
+Start implementing the tasks one by one based on the provided descriptions. Feel free to install any extra dependencies that you think will help you to complete them more efficiently.
 
-## Collaborate with your team
+## Practical task
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Task 1: Implement an EventEmitter Class
 
-## Test and Deploy
+In this task, you will be creating an `EventEmitter` class, which is similar to the built-in [EventEmitter](https://nodejs.org/api/events.html) in Node.js. This class will be used to manage events and their listeners.
 
-Use the built-in continuous integration in GitLab.
+Your `EventEmitter` class should have the following methods:
+- `addListener(eventName: string, fn: Function)`: This method should add a new listener function to a specified event.
+- `on(eventName: string, fn: Function)`: This method is an alias for the `addListener` method.
+- `once(eventName: string, fn: Function)`: This method should add a one-time listener function for a specified event. The listener should be invoked only the first time the event is fired, after which it is removed.
+- `removeListener(eventName: string, fn: Function)`: This method should remove the specified listener from the listener array for a specified event.
+- `off(eventName: string, fn: Function)`: This method is an alias for the `removeListener` method.
+- `emit(eventName: string, ...args: any[])`: This method should call each of the listeners registered for a specified event, passing the supplied arguments to each.
+- `listenerCount(eventName: string)`: This method should return the number of listeners listening to a specified event.
+- `rawListeners(eventName: string)`: This method should return a copy of the array of listeners for a specified event.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+The exact implementation details are up to you, but the final `EventEmitter` class should meet the specifications described above. Consider edge cases and ensure your code is robust and handles errors gracefully.
 
-***
+Use the examples below to test your implementation:
+```javascript
+const emitter = new EventEmitter();
 
-# Editing this README
+// Test addListener and emit
+emitter.addListener('testEvent', (data) => console.log(data));
+emitter.emit('testEvent', 'Hello, World!'); // Should log 'Hello, World!'
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+// Test listenerCount
+console.log(emitter.listenerCount('testEvent')); // Should log 1
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+// Test rawListeners
+console.log(emitter.rawListeners('testEvent')); // Should log [ [Function] ]
 
-## Name
-Choose a self-explaining name for your project.
+// Test removeListener
+emitter.removeListener('testEvent', console.log);
+console.log(emitter.listenerCount('testEvent')); // Should log 0
+```
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Task 2: Implement WithTime Class
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+In this task, you will be creating `WithTime` class that extends the `EventEmitter` class you created in the previous task. This class will be used to call the asynchronous function and measure the time it takes to complete it.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Your `WithTime` class should include the following method:
+- `execute(asyncFunc: AsyncFunction, ...args: any[])`: This method should execute a provided asynchronous function and measure the execution time using the `console.time()` and `console.timeEnd()` functions.
+   - The `asyncFunc` should be a function that performs an asynchronous operation and accepts a callback as its last argument. This callback should follow the Node.js convention of accepting an Error object or null as the first argument, and the result of the operation as the second argument.
+   - The `asyncFunc` should fetch data from https://jsonplaceholder.typicode.com/posts/1 and transform it to JSON format.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+The `execute` method should emit the following events:
+  - `begin` event at the start of execution.
+  - `data` event if the asynchronous function provides data, passing the data as an argument to any `data` event listeners.
+  - `end` event at the end of execution.
+  - `error` event if an error occurs during the execution of the asynchronous function, passing the Error object as an argument to any `error` event listeners.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Remember to account for edge cases and ensure that your code is robust and handles errors gracefully.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Use the example below to test your implementation:
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+```javascript
+import axios from 'axios';
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+const fetchFromUrl = (url: string, cb: (error: Error | null, data?: any) => void) => {
+  axios.get(url)
+    .then((response) => {
+      cb(null, response.data);
+    })
+    .catch((error) => {
+      cb(error);
+    });
+};
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+const withTime = new WithTime();
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+withTime.on('begin', () => console.log('About to execute'));
+withTime.on('data', (data) => console.log('Data:', data));
+withTime.on('end', () => console.log('Done with execute'));
+withTime.on('error', (error) => console.log('Error:', error));
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+withTime.execute(fetchFromUrl, 'https://jsonplaceholder.typicode.com/posts/1');
+```
 
-## License
-For open source projects, say how it is licensed.
+### Task 3: Convert CSV Data to JSON and Write to a TXT File
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+In this task, you will be creating a function named `exportCsvToTxt()` which will read a CSV file, convert the data to JSON format using the [csvtojson](https://www.npmjs.com/package/csvtojson) package and write the data to a TXT file.
+
+The function should return a Promise that resolves true when the export is done or reject an error if something went wrong during reading or writing to the file.
+
+Keep in mind that all the content of the CSV file should not be loaded into RAM. Instead, it should read and write the file content line by line using streams.
+
+The CSV file is located at `./src/assets/books.csv` and has the following format:
+```
+Book;Author;Amount;Price
+The Compound Effect;Darren Hardy;5;9,48
+The 7 Habits of Highly Effective People;Stephen R. Covey;4;23,48
+The Miracle Morning;Hal Elrod;10;21,34
+Influence: The Psychology of Persuasion;Robert B. Cialdini;4;12,99
+The ONE Thing;Gary Keller;1;11,18
+```
+
+The resulting TXT file should be written to `./src/assets/books.txt` and have the following format:
+```
+{"book":"The Compound Effect","author":"Darren Hardy","price":9.48}
+{"book":"The 7 Habits of Highly Effective People","author":"Stephen R. Covey","price":23.48}
+{"book":"The Miracle Morning","author":"Hal Elrod","price":21.34}
+{"book":"Influence: The Psychology of Persuasion","author":"Robert B. Cialdini","price":12.99}
+{"book":"The ONE Thing","author":"Gary Keller","price":11.18}
+```
+
+## Evaluation criteria
+
+- [x] Task 1 is implemented based on requirements specified.
+- [x] Task 2 is implemented based on requirements specified.
+- [x] Task 3 is implemented based on requirements specified.
