@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "target": "es5",
+      "sourceMap": true,
+      "strict": true,
+      "noImplicitAny": true,
+      "resolveJsonModule": true,
+      "lib": ["ESNext"]
+  },
+  "files": ["src/types/express.d.ts"],
+  "exclude": ["node_modules"]
+}
