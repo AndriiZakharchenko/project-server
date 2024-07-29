@@ -10,6 +10,5 @@
       "resolveJsonModule": true,
       "lib": ["ESNext"]
   },
-  "files": ["src/types/express.d.ts"],
   "exclude": ["node_modules"]
 }
