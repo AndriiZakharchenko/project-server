@@ -8,7 +8,10 @@
       "strict": true,
       "noImplicitAny": true,
       "resolveJsonModule": true,
-      "lib": ["ESNext"]
+      "lib": ["ESNext"],
+      "outDir": "./dist",
+      "rootDir": "./src",
   },
+  "files": ["src/types/express.d.ts"],
   "exclude": ["node_modules"]
 }

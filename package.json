@@ -4,10 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:dev": "nodemon ./src/server.ts",
+    "start": "npm run build && ./node_modules/.bin/pm2 start ./dist/server.js --name 6-express-layered-architecture",
+    "stop": "./node_modules/.bin/pm2 stop 6-express-layered-architecture",
     "build": "tsc",
-    "start": "nodemon ./src/server.ts",
-    "stop": "stop",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "coverage": "jest --coverage --coverageReporters=cobertura --coverageDirectory=.",
+    "pretest": "npm start",
+    "posttest": "npm stop"
   },
   "author": "",
   "license": "ISC",
