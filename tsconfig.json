@@ -1,17 +1,11 @@
 {
   "compilerOptions": {
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "target": "es5",
-      "sourceMap": true,
-      "strict": true,
-      "noImplicitAny": true,
-      "resolveJsonModule": true,
-      "lib": ["ESNext"],
-      "outDir": "./dist",
-      "rootDir": "./src",
-  },
-  "files": ["src/types/express.d.ts"],
-  "exclude": ["node_modules"]
+    "target": "ES2018",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+  }
 }
