@@ -20,7 +20,7 @@ paths:
             format: uuid
           required: true
           description: User id (uuid)
-          example: 'eb5a26af-6e4c-4f31-a9b1-3450d42ac66c'
+          example: 'test-user-id'
       responses:
         '200':
           description: Returns user cart
@@ -83,7 +83,7 @@ paths:
             format: uuid
           required: true
           description: User id (uuid)
-          example: 'eb5a26af-6e4c-4f31-a9b1-3450d42ac66c'
+          example: 'test-user-id'
       requestBody:
         content:
           application/json:
@@ -171,7 +171,7 @@ paths:
             format: uuid
           required: true
           description: User id (uuid)
-          example: 'eb5a26af-6e4c-4f31-a9b1-3450d42ac66c'
+          example: 'test-user-id'
       responses:
         '200':
           description: Returns success = true if cart was successfully emptied
@@ -226,7 +226,7 @@ paths:
             format: uuid
           required: true
           description: User id (uuid)
-          example: 'eb5a26af-6e4c-4f31-a9b1-3450d42ac66c'
+          example: 'test-user-id'
       responses:
         '200':
           description: Successful operation
@@ -317,7 +317,7 @@ paths:
             format: uuid
           required: true
           description: User id (uuid)
-          example: 'eb5a26af-6e4c-4f31-a9b1-3450d42ac66c'
+          example: 'test-user-id'
       responses:
         '200':
           description: Returns a list of all products available
@@ -387,7 +387,7 @@ paths:
             format: uuid
           required: true
           description: User id (uuid)
-          example: 'eb5a26af-6e4c-4f31-a9b1-3450d42ac66c'
+          example: 'test-user-id'
       responses:
         '200':
           description: Successful operation
