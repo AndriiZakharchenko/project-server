@@ -227,6 +227,11 @@ paths:
           required: true
           description: User id (uuid)
           example: 'test-user-id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckoutRequestBody'
       responses:
         '200':
           description: Successful operation
@@ -260,7 +265,7 @@ paths:
                     delivery:
                       type: post
                       address: London
-                    comments: ''
+                    comments: 'No need to call back for confirmation'
                     status: created
                     total: 500
                 error: null
@@ -649,6 +654,33 @@ components:
         count:
           type: number
           example: 5
+    CheckoutRequestBody:
+      type: object
+      properties:
+        payment:
+          type: object
+          properties:
+            payment:
+              type: string
+              example: "paypal"
+            address:
+              type: string
+              example: "London"
+            creditCard:
+              type: string
+              example: "1234-1234-1234-1234"
+        delivery:
+          type: object
+          properties:
+            payment:
+              type: string
+              example: "post"
+            address:
+              type: string
+              example: "London"
+        comments:
+            type: string
+            example: "No need to call back for confirmation"
     CreateUserRequestBody:
       type: object
       properties:
