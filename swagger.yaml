@@ -253,14 +253,6 @@ paths:
                           description: Cute pen
                           price: 20
                         count: 5
-                    payment:
-                      type: paypal
-                      address: London
-                      creditCard: 1234-1234-1234-1234
-                    delivery:
-                      type: post
-                      address: London
-                    comments: ''
                     status: created
                     total: 500
                 error: null
