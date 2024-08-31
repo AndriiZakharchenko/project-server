@@ -7,7 +7,11 @@
     "start:dev": "nodemon ./src/server.ts",
     "start": "npm run build && ./node_modules/.bin/pm2 start ./dist/src/server.js --name 6-express-layered-architecture",
     "stop": "./node_modules/.bin/pm2 stop 6-express-layered-architecture",
+<<<<<<< HEAD
     "build": "mkdir -p dist && cp package.json dist/ && tsc",
+=======
+    "build": "tsc",
+>>>>>>> 6e83604b117f12f79cee4c8af169a5709d2dad76
     "test": "jest",
     "test:coverage": "jest --coverage",
     "coverage": "jest --coverage --coverageReporters=cobertura --coverageDirectory=.",
@@ -23,12 +27,28 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.15",
+<<<<<<< HEAD
     "@types/uuid": "^9.0.0",
+=======
+    "@types/jest": "^29.5.12",
+    "@types/supertest": "^6.0.2",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+>>>>>>> 6e83604b117f12f79cee4c8af169a5709d2dad76
     "jest": "^29.7.0",
     "jest-junit": "^16.0.0",
     "joi": "^17.13.3",
     "nodemon": "^2.0.20",
+<<<<<<< HEAD
     "supertest": "^7.0.0",
+=======
+    "pm2": "^5.4.2",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+>>>>>>> 6e83604b117f12f79cee4c8af169a5709d2dad76
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   }
