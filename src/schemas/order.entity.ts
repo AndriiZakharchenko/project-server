@@ -7,16 +7,6 @@ export interface OrderEntity {
   userId: string;
   cartId: string;
   items: CartItemEntity[] // products from CartEntity
-  payment: {
-    type: string,
-    address?: string,
-    creditCard?: string,
-  },
-  delivery: {
-    type: string,
-    address: string,
-  },
-  comments: string,
   status: ORDER_STATUS;
   total: number;
 }
@@ -26,16 +16,6 @@ export interface OrderEntity {
 //   userId: '0fe36d16-49bc-4aab-a227-f84df899a6cb',
 //   cartId: '',
 //   items: cart.items,
-//   payment: {
-//     type: 'paypal',
-//     address: 'Payment address',
-//     creditCard: '12234567890',
-//   },
-//   delivery: {
-//     type: 'post',
-//     address: 'Delivery address',
-//   },
-//   comments: '',
 //   status: 'created',
 //   total: 2,
 // };
