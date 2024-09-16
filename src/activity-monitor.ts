@@ -89,5 +89,5 @@ export default function run() {
   }, 100);
 
   setInterval(updateConsole, 100);
-  setInterval(updateLog, 5000);
+  setInterval(updateLog, 60000);
 }
