@@ -9,26 +9,24 @@ interface ILogProcesses {
 }
 
 export default function run() {
-  const logProcesses: ILogProcesses = async (processInfo, fileName) => {
+  const logProcesses: ILogProcesses = (processInfo, fileName) => {
     const unixTime = Date.now();
     const logItem = `${unixTime}\t${processInfo}`;
     const directoryPath = path.join(__dirname, 'logs');
 
-    try {
-      if (!fs.existsSync(directoryPath)) {
-        await fsPromises.mkdir(directoryPath);
-        console.log(`Directory 'logs' created`);
-      }
-
-      await fsPromises.appendFile(path.join(directoryPath, fileName), logItem);
-    } catch (error) {
-      console.error(error);
+    if (!fs.existsSync(directoryPath)) {
+      fs.mkdirSync(directoryPath, { recursive: true });
     }
+
+    fs.appendFile(path.join(directoryPath, fileName), logItem, (error) => {
+      if (error) throw error;
+      console.log('Saved!');
+    });
   };
 
   let lastOutput = '';
 
-  function checkPlatform(): string {
+  function getPlatformCmd() {
     const platform = os.platform();
     const unixLikePlatforms = [
       'aix',       // IBM AIX
@@ -49,34 +47,33 @@ export default function run() {
     } else if (windowsPlatforms.includes(platform)) {
       return `powershell "Get-Process | Sort-Object CPU -Descending | Select-Object -Property Name, CPU, WorkingSet -First 1 | ForEach-Object { $_.Name + ' ' + $_.CPU + ' ' + $_.WorkingSet }"`;
     } else {
-      logProcesses(`Unsupported platform - ${os.platform()}`, 'activityMonitor.log');
-      process.stdout.end('Process exited with code 1 ');
-      process.exit(1);
+      return '';
     }
+  }
+
+  function processExit() {
+    process.stderr.end('Process exited with code 1 ');
+    process.exit(1);
   }
 
   function execProcess(command: string) {
     exec(command, (error: ExecException | null, stdout: string, stderr: string) => {
       if (error) {
         logProcesses(`Error: ${error.message}`, 'activityMonitor.log');
-        process.stdout.write('Process exited with code 1 ');
-        return;
+        processExit();
       }
 
       if (stderr) {
         logProcesses(stderr, 'activityMonitor.log');
-        process.stdout.write('Process exited with code 1 ');
-        return;
+        processExit();
       }
 
       lastOutput = stdout;
     });
   }
 
-
   function updateConsole() {
-    console.clear();
-    console.log(lastOutput);
+    process.stdout.write(`${lastOutput}\r\n`);
   }
 
   function updateLog() {
@@ -84,8 +81,14 @@ export default function run() {
   }
 
   setInterval(() => {
-    const command = checkPlatform();
-    execProcess(command);
+    const command = getPlatformCmd();
+
+    if (!command) {
+      logProcesses(`Unsupported platform - ${os.platform()}`, 'activityMonitor.log');
+      processExit();
+    } else {
+      execProcess(command);
+    }
   }, 100);
 
   setInterval(updateConsole, 100);
