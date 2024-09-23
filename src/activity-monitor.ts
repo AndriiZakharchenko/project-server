@@ -73,7 +73,7 @@ export default function run() {
   }
 
   function updateConsole() {
-    process.stdout.write(`${lastOutput}\r\n`);
+    process.stdout.write(`${lastOutput}\r`);
   }
 
   function updateLog() {
