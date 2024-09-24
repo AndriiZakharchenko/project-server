@@ -1,3 +1,6 @@
+const csv = require('csvtojson');
+import fs from 'fs';
+
 /**
  * Exports a CSV file to a TXT file.
  * CSV format:
@@ -9,7 +12,25 @@
  * @returns {Promise<boolean>} - A promise that resolves to true when export is done.
  */
 export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolean> => {
-  // implementation here
-  console.log(`csvPath = ${csvPath}, txtPath = ${txtPath}`);
-  return Promise.resolve(true); // should be changed
+  const readableStream = fs.createReadStream(csvPath);
+  const writableStream = fs.createWriteStream(txtPath);
+
+  return new Promise((resolve, reject) => {
+    readableStream
+      .pipe(csv({
+        delimiter: ';'
+      }))
+      .on('data', (chunk: Buffer) => {
+        writableStream.write(chunk.toString('utf-8'));
+      })
+      .on('end', () => {
+        console.log('Operation csv to txt successfully finished!');
+        resolve();
+      })
+      .on('error', (error: any) => {
+        console.log('Operation csv to txt failed!', error);
+        reject(error);
+      })
+      .then(() => {});
+  })
 };
