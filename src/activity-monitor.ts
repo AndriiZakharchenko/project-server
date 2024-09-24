@@ -66,13 +66,13 @@ function execProcess(command: string) {
       processExit();
     }
 
-    lastOutput = stdout;
+    lastOutput = stdout.replace(/\r?\n|\r/g, '')
   });
 }
 
 function updateConsole() {
   console.clear();
-  process.stdout.write(`${lastOutput}`);
+  process.stdout.write(`${lastOutput}\r`);
 }
 
 function updateLog() {
