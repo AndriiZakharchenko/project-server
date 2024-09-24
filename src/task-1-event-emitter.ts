@@ -1,21 +1,27 @@
-/* eslint-disable class-methods-use-this */
-type EventListener = (...args: any[]) => void;
+type TypeListener = Record<string, {
+  event: Function,
+  once?: Boolean
+}[]>;
 
-/**
- * Class to manage event listeners and emit events.
- */
 export class EventEmitter {
-  private listeners: { [event: string]: EventListener[] } = {};
+  private listeners: TypeListener = {}
 
   /**
    * Adds a new listener function to the specified event.
    * @param {string} eventName - Name of the event.
    * @param {EventListener} fn - Listener function.
+   * @param {boolean} [once=false] - A boolean flag indicating if the listener should be invoked only once.
    * @returns {EventEmitter} - EventEmitter instance.
    */
-  addListener(eventName: string, fn: EventListener): this {
-    // implementation here
-    return this;
+  addListener(eventName: string, fn: Function, once?: boolean) {
+    if (!this.listeners[eventName]) {
+      this.listeners[eventName] = [];
+    }
+
+    this.listeners[eventName].push({
+      event: fn,
+      once
+    });
   }
 
   /**
@@ -24,9 +30,8 @@ export class EventEmitter {
    * @param {EventListener} fn - Listener function.
    * @returns {EventEmitter} - Current EventEmitter instance.
    */
-  on(eventName: string, fn: EventListener): this {
-    // implementation here
-    return this;
+  on(eventName: string, fn: Function) {
+    this.addListener(eventName, fn);
   }
 
   /**
@@ -35,31 +40,8 @@ export class EventEmitter {
    * @param {EventListener} fn - Listener function.
    * @returns {EventEmitter} - EventEmitter instance.
    */
-  once(eventName: string, fn: EventListener): this {
-    // implementation here
-    return this;
-  }
-
-  /**
-   * Removes the specified listener for the event.
-   * @param {string} eventName - Name of the event.
-   * @param {EventListener} fn - Listener function.
-   * @returns {EventEmitter} - EventEmitter instance.
-   */
-  removeListener(eventName: string, fn: EventListener): this {
-    // implementation here
-    return this;
-  }
-
-  /**
-   * Alias for removeListener method.
-   * @param {string} eventName - Name of the event.
-   * @param {EventListener} fn - Listener function.
-   * @returns {EventEmitter} - EventEmitter instance.
-   */
-  off(eventName: string, fn: EventListener): this {
-    // implementation here
-    return this;
+  once(eventName: string, fn: Function) {
+    this.addListener(eventName, fn, true);
   }
 
   /**
@@ -69,9 +51,50 @@ export class EventEmitter {
    * @param {...any[]} args - The arguments to be passed to each listener function.
    * @returns {boolean} - True if the event had listeners, false otherwise.
    */
-  emit(eventName: string, ...args: any[]): boolean {
-    // implementation here
-    return true; // should be changed
+  emit(eventName: string, ...args: any[]) {
+    if (this.listeners.hasOwnProperty(eventName)) {
+      let updatedListeners = [];
+
+      for (const listener of this.listeners[eventName]) {
+        listener.event.call(this.listeners[eventName], args);
+
+        if (!listener.once) {
+          updatedListeners.push(listener);
+        }
+      }
+
+      this.listeners[eventName] = updatedListeners;
+    } else {
+      console.error(`Event ${eventName} was not found`);
+    }
+  }
+
+  /**
+   * Removes the specified listener for the event.
+   * @param {string} eventName - Name of the event.
+   * @param {EventListener} fn - Listener function.
+   * @returns {EventEmitter} - EventEmitter instance.
+   */
+  removeListener(eventName: string, fn: Function) {
+    if (this.listeners.hasOwnProperty(eventName)) {
+      for (let i = 0; i < this.listeners[eventName].length; i++) {
+        if (this.listeners[eventName][i].event === fn) {
+          this.listeners[eventName].splice(i, 1);
+        }
+      }
+    } else {
+      console.error(`Event ${eventName} was not found`);
+    }
+  }
+
+  /**
+   * Alias for removeListener method.
+   * @param {string} eventName - Name of the event.
+   * @param {EventListener} fn - Listener function.
+   * @returns {EventEmitter} - EventEmitter instance.
+   */
+  off(eventName: string, fn: Function) {
+    this.removeListener(eventName, fn);
   }
 
   /**
@@ -79,9 +102,12 @@ export class EventEmitter {
    * @param {string} eventName - Name of the event.
    * @returns {number} - The number of listeners for the event.
    */
-  listenerCount(eventName: string): number {
-    // implementation here
-    return 0; // should be changed
+  listenerCount(eventName: string) {
+    if (this.listeners.hasOwnProperty(eventName)) {
+      return Object.keys(this.listeners[eventName]).length;
+    } else {
+      return 0;
+    }
   }
 
   /**
@@ -89,8 +115,11 @@ export class EventEmitter {
    * @param {string} eventName - Name of the event.
    * @returns {EventListener[]} - An array of listener functions for the event.
    */
-  rawListeners(eventName: string): EventListener[] {
-    // implementation here
-    return []; // should be changed
+  rawListeners(eventName: string) {
+    if (this.listeners.hasOwnProperty(eventName)) {
+      return this.listeners[eventName].map((listener) => listener.event);
+    } else {
+      return [];
+    }
   }
 }
