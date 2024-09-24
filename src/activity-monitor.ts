@@ -71,10 +71,8 @@ function execProcess(command: string) {
 }
 
 function updateConsole() {
-  // @ts-ignore
-  process.stdout.clearLine();
-  process.stdout.cursorTo(0);
-  process.stdout.write(lastOutput);
+  console.clear();
+  process.stdout.write(`${lastOutput}`);
 }
 
 function updateLog() {
@@ -87,6 +85,8 @@ export default function run() {
 
     if (!command) {
       process.stderr.end('Unsupported platform')
+      logProcesses(`Unsupported platform - ${os.platform()}`, 'activityMonitor.log');
+      processExit();
     } else {
       execProcess(command);
     }
