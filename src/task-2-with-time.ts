@@ -1,7 +1,5 @@
-/* eslint-disable class-methods-use-this */
-import { EventEmitter } from './task-1-event-emitter';
+import { EventEmitter } from './task-1-event-emitter'; // Make sure EventEmitter is imported correctly
 
-export type Callback = (error: Error | null, data?: any) => void;
 export type AsyncFunction = (url: string, ...cbArgs: any[]) => void;
 
 /**
@@ -9,14 +7,20 @@ export type AsyncFunction = (url: string, ...cbArgs: any[]) => void;
  * @extends EventEmitter
  */
 export class WithTime extends EventEmitter {
-  /**
-   * Executes a provided asynchronous function and computes the time it takes to execute it.
-   * Emits event "start", event "end" and event "data" for the data received.
-   * @param {AsyncFunction} asyncFunc - The asynchronous function to be executed.
-   * This function should accept a callback as its last argument.
-   * @param {...any[]} args - The arguments to be passed to the asyncFunc, excluding the callback.
-   */
-  execute(asyncFunc: AsyncFunction, ...args: any[]): void {
-    // implementation here
+  execute(asyncFunc: AsyncFunction, url: string): void {
+    const timerLabel = 'Execution Time';
+    console.time(timerLabel);
+    this.emit('begin');
+
+    asyncFunc(url, (error: Error | null, data?: any) => {
+      if (error) {
+        this.emit('error', error);
+      } else {
+        this.emit('data', data);
+      }
+
+      this.emit('end');
+      console.timeEnd(timerLabel);  // End the timer here, after async operation completes
+    });
   }
 }

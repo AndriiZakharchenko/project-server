@@ -25,6 +25,7 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
       })
       .on('end', () => {
         console.log('Operation csv to txt successfully finished!');
+        // @ts-ignore
         resolve();
       })
       .on('error', (error: any) => {
@@ -34,3 +35,4 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
       .then(() => {});
   })
 };
+
