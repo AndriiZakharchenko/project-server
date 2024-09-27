@@ -1,7 +1,7 @@
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import { exec, ExecException } from 'child_process';
-const os = require('os');
 
 interface ILogProcesses {
   (processInfo: string, fileName: string): void;
@@ -50,7 +50,7 @@ function getPlatformCmd() {
 }
 
 function processExit() {
-  process.stderr.end('Process exited with code 1 ');
+  process.stderr.write('Process exited with code 1');
   process.exit(1);
 }
 
@@ -66,7 +66,7 @@ function execProcess(command: string) {
       processExit();
     }
 
-    lastOutput = stdout.replace(/\r?\n|\r/g, '')
+    lastOutput = stdout;
   });
 }
 
@@ -79,12 +79,12 @@ function updateLog() {
   logProcesses(lastOutput, 'activityMonitor.log');
 }
 
-export default function run() {
+export const run = () => {
   setInterval(() => {
     const command = getPlatformCmd();
 
     if (!command) {
-      process.stderr.end('Unsupported platform')
+      process.stderr.write('Unsupported platform');
       logProcesses(`Unsupported platform - ${os.platform()}`, 'activityMonitor.log');
       processExit();
     } else {

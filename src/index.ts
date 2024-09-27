@@ -1,3 +1,3 @@
-import activityMonitor from './activity-monitor';
+import { run } from './activity-monitor';
 
-activityMonitor();
+run();
