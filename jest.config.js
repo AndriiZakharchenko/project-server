@@ -3,7 +3,14 @@ module.exports = {
   testEnvironment: 'node',
   modulePaths: ['<rootDir>/src/'],
   testMatch: ['<rootDir>/src/**/*.test.*s'],
-  coveragePathIgnorePatterns: ['<rootDir>/src/test/'],
   verbose: true,
   reporters: ['default', 'jest-junit'],
+  coveragePathIgnorePatterns: ['<rootDir>/src/test/'],
+  collectCoverageFrom: ['src/**'],
+  coverageReporters: ['text'],
+  coverageThreshold: {
+    global: {
+      lines: 85
+    }
+  }
 };
