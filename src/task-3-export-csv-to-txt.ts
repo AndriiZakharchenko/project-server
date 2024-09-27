@@ -26,13 +26,16 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
       .on('end', () => {
         console.log('Operation csv to txt successfully finished!');
         // @ts-ignore
-        resolve();
+        resolve(true);
       })
       .on('error', (error: any) => {
         console.log('Operation csv to txt failed!', error);
         reject(error);
       })
-      .then(() => {});
+      .then(() => {})
+      .catch((error: any) => {
+        throw new Error(error);
+      });
   })
 };
 

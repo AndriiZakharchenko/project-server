@@ -66,6 +66,7 @@ export class EventEmitter {
       this.listeners[eventName] = updatedListeners;
     } else {
       console.error(`Event ${eventName} was not found`);
+      return false;
     }
   }
 
