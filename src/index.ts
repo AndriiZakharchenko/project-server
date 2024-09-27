@@ -1,3 +1,1 @@
-import { run } from './activity-monitor';
-
-run();
+import run from './activity-monitor';

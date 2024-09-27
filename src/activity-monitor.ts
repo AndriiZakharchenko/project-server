@@ -79,7 +79,7 @@ function updateLog() {
   logProcesses(lastOutput, 'activityMonitor.log');
 }
 
-export const run = () => {
+export default function run() {
   setInterval(() => {
     const command = getPlatformCmd();
 
