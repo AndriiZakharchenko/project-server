@@ -28,6 +28,7 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
           Amount: 'omit',
           Price: (item: string) => parseFloat(item.replace(',', '.')),
         },
+        headers: ['book', 'author', 'Amount', 'price'],
       }))
       .on('data', (chunk: Buffer) => {
         writableStream.write(chunk.toString('utf-8'));
