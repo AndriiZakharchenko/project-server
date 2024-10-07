@@ -9,9 +9,9 @@ interface ILogProcesses {
 
 const logProcesses: ILogProcesses = (processInfo, fileName) => {
   const unixTime = Date.now();
-  const logItem = `${unixTime}\t${processInfo}`;
-  const directoryPath = path.join(__dirname, 'logs');
+  const logItem = `${unixTime}\t${processInfo}\n`; // додано новий рядок
 
+  const directoryPath = path.join(__dirname, 'logs');
   if (!fs.existsSync(directoryPath)) {
     fs.mkdirSync(directoryPath, { recursive: true });
   }
@@ -26,31 +26,19 @@ let lastOutput = '';
 
 function getPlatformCmd() {
   const platform = os.platform();
-  const unixLikePlatforms = [
-    'aix',       // IBM AIX
-    'darwin',    // macOS (і iOS)
-    'freebsd',   // FreeBSD
-    'linux',     // Linux дистрибутиви
-    'openbsd',   // OpenBSD
-    'netbsd',    // NetBSD
-    'sunos'      // SunOS (Solaris)
-  ];
-  const windowsPlatforms = [
-    'win32',     // Windows (усі версії)
-    'cygwin'     // Cygwin (POSIX-спільний шар для Windows)
-  ];
+  const unixLikePlatforms = ['aix', 'darwin', 'freebsd', 'linux', 'openbsd', 'netbsd', 'sunos'];
+  const windowsPlatforms = ['win32', 'cygwin'];
 
   if (unixLikePlatforms.includes(platform)) {
     return 'ps -A -o %cpu,%mem,comm | sort -nr | head -n 1';
-  } else if (windowsPlatforms.includes(platform)) {
-    return `powershell "Get-Process | Sort-Object CPU -Descending | Select-Object -Property Name, CPU, WorkingSet -First 1 | ForEach-Object { $_.Name + ' ' + $_.CPU + ' ' + $_.WorkingSet }"`;
-  } else {
-    return '';
+  } if (windowsPlatforms.includes(platform)) {
+    return 'powershell "Get-Process | Sort-Object CPU -Descending | Select-Object -Property Name, CPU, WorkingSet -First 1 | ForEach-Object { $_.Name + \' \' + $_.CPU + \' \' + $_.WorkingSet }"';
   }
+  return ''; // Повертає порожній рядок, якщо платформа не підтримується
 }
 
 function processExit() {
-  process.stderr.write('Process exited with code 1');
+  process.stderr.write('Process exited with code 1\n');
   process.exit(1);
 }
 
@@ -66,12 +54,11 @@ function execProcess(command: string) {
       processExit();
     }
 
-    lastOutput = stdout;
+    lastOutput = typeof stdout === 'string' ? stdout : JSON.stringify(stdout);
   });
 }
 
 function updateConsole() {
-  console.clear();
   process.stdout.write(`${lastOutput}\r`);
 }
 
@@ -80,18 +67,14 @@ function updateLog() {
 }
 
 export default function run() {
-  setInterval(() => {
-    const command = getPlatformCmd();
+  const command = getPlatformCmd();
+  if (!command) {
+    process.stderr.write('Unsupported platform');
+    logProcesses(`Unsupported platform - ${os.platform()}`, 'activityMonitor.log');
+    process.exit(1);
+  }
 
-    if (!command) {
-      process.stderr.write('Unsupported platform');
-      logProcesses(`Unsupported platform - ${os.platform()}`, 'activityMonitor.log');
-      processExit();
-    } else {
-      execProcess(command);
-    }
-  }, 100);
-
-  setInterval(updateConsole, 100);
-  setInterval(updateLog, 60000);
+  setInterval(() => execProcess(command), 100); // Запуск команди кожні 100 мс
+  setInterval(updateConsole, 100); // Оновлення консолі кожні 100 мс
+  setInterval(updateLog, 60000); // Запис у лог кожні 60 секунд
 }
