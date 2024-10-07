@@ -24,11 +24,11 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
     readableStream
       .pipe(csv({
         delimiter: ';',
+        headers: ['book', 'author', 'amount', 'price'],
         colParser: {
-          Amount: 'omit',
-          Price: (item: string) => parseFloat(item.replace(',', '.')),
+          amount: 'omit',
+          price: (item: string) => parseFloat(item.replace(',', '.')),
         },
-        headers: ['book', 'author', 'Amount', 'price'],
       }))
       .on('data', (chunk: Buffer) => {
         writableStream.write(chunk.toString('utf-8'));
