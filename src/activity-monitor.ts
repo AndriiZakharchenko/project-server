@@ -34,7 +34,7 @@ function getPlatformCmd() {
   } if (windowsPlatforms.includes(platform)) {
     return 'powershell "Get-Process | Sort-Object CPU -Descending | Select-Object -Property Name, CPU, WorkingSet -First 1 | ForEach-Object { $_.Name + \' \' + $_.CPU + \' \' + $_.WorkingSet }"';
   }
-  return ''; // Повертає порожній рядок, якщо платформа не підтримується
+  return '';
 }
 
 function processExit() {
