@@ -1,10 +1,10 @@
 type TypeListener = Record<string, {
   event: Function,
-  once?: Boolean
+  once?: boolean
 }[]>;
 
 export class EventEmitter {
-  private listeners: TypeListener = {}
+  private listeners: TypeListener = {};
 
   /**
    * Adds a new listener function to the specified event.
@@ -20,7 +20,7 @@ export class EventEmitter {
 
     this.listeners[eventName].push({
       event: fn,
-      once
+      once,
     });
   }
 
@@ -53,10 +53,10 @@ export class EventEmitter {
    */
   emit(eventName: string, ...args: any[]) {
     if (this.listeners.hasOwnProperty(eventName)) {
-      let updatedListeners = [];
+      const updatedListeners = [];
 
       for (const listener of this.listeners[eventName]) {
-        listener.event.call(this.listeners[eventName], args);
+        listener.event.apply(this.listeners[eventName], args);
 
         if (!listener.once) {
           updatedListeners.push(listener);
@@ -106,9 +106,8 @@ export class EventEmitter {
   listenerCount(eventName: string) {
     if (this.listeners.hasOwnProperty(eventName)) {
       return Object.keys(this.listeners[eventName]).length;
-    } else {
-      return 0;
     }
+    return 0;
   }
 
   /**
@@ -119,8 +118,7 @@ export class EventEmitter {
   rawListeners(eventName: string) {
     if (this.listeners.hasOwnProperty(eventName)) {
       return this.listeners[eventName].map((listener) => listener.event);
-    } else {
-      return [];
     }
+    return [];
   }
 }

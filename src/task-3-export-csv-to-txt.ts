@@ -1,5 +1,6 @@
-const csv = require('csvtojson');
 import fs from 'fs';
+
+const csv = require('csvtojson');
 
 /**
  * Exports a CSV file to a TXT file.
@@ -16,26 +17,25 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
   const writableStream = fs.createWriteStream(txtPath);
 
   return new Promise((resolve, reject) => {
+    writableStream.on('error', (error) => {
+      console.log('Operation csv to txt failed during writing!', error);
+      reject(error);
+    });
+
     readableStream
       .pipe(csv({
-        delimiter: ';'
+        delimiter: ';',
       }))
       .on('data', (chunk: Buffer) => {
         writableStream.write(chunk.toString('utf-8'));
       })
       .on('end', () => {
         console.log('Operation csv to txt successfully finished!');
-        // @ts-ignore
         resolve(true);
       })
       .on('error', (error: any) => {
-        console.log('Operation csv to txt failed!', error);
+        console.log('Operation csv to txt failed during reading!', error);
         reject(error);
-      })
-      .then(() => {})
-      .catch((error: any) => {
-        throw new Error(error);
       });
-  })
+  });
 };
-

@@ -20,7 +20,7 @@ export class WithTime extends EventEmitter {
       }
 
       this.emit('end');
-      console.timeEnd(timerLabel);  // End the timer here, after async operation completes
+      console.timeEnd(timerLabel); // End the timer here, after async operation completes
     });
   }
 }
