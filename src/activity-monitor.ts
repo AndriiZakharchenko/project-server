@@ -9,7 +9,7 @@ interface ILogProcesses {
 
 const logProcesses: ILogProcesses = (processInfo, fileName) => {
   const unixTime = Date.now();
-  const logItem = `${unixTime}\t${processInfo}\n`; // додано новий рядок
+  const logItem = `${unixTime}\t${processInfo}\n`;
 
   const directoryPath = path.join(__dirname, 'logs');
   if (!fs.existsSync(directoryPath)) {
@@ -74,7 +74,7 @@ export default function run() {
     process.exit(1);
   }
 
-  setInterval(() => execProcess(command), 100); // Запуск команди кожні 100 мс
-  setInterval(updateConsole, 100); // Оновлення консолі кожні 100 мс
-  setInterval(updateLog, 60000); // Запис у лог кожні 60 секунд
+  setInterval(() => execProcess(command), 100);
+  setInterval(updateConsole, 100);
+  setInterval(updateLog, 60000);
 }
