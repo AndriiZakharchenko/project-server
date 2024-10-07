@@ -16,9 +16,14 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
   const writableStream = fs.createWriteStream(txtPath);
 
   return new Promise((resolve, reject) => {
+    readableStream.on('error', (error) => {
+      console.log('Operation csv to txt failed during reading!', error);
+      reject(new Error('Failed to read CSV file'));
+    });
+
     writableStream.on('error', (error) => {
       console.log('Operation csv to txt failed during writing!', error);
-      reject(error);
+      reject(new Error('Failed to write TXT file'));
     });
 
     readableStream
