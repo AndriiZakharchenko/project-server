@@ -1,6 +1,5 @@
 import fs from 'fs';
-
-const csv = require('csvtojson');
+import csv from 'csvtojson';
 
 /**
  * Exports a CSV file to a TXT file.
@@ -25,6 +24,10 @@ export const exportCsvToTxt = (csvPath: string, txtPath: string): Promise<boolea
     readableStream
       .pipe(csv({
         delimiter: ';',
+        colParser: {
+          Amount: 'omit',
+          Price: (item: string) => parseFloat(item.replace(',', '.')),
+        },
       }))
       .on('data', (chunk: Buffer) => {
         writableStream.write(chunk.toString('utf-8'));
