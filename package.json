@@ -4,9 +4,12 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "jest",
+    "build": "tsc",
     "start": "node dist/index.js",
-    "build": "tsc"
+    "test:unit": "jest --testMatch '<rootDir>/src/**/*.unit.test.ts'",
+    "test:integration": "jest --testMatch '<rootDir>/src/**/*.integration.test.ts'",
+    "test:e2e": "jest --testMatch '<rootDir>/src/e2e/**/*.test.ts",
+    "test:coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",

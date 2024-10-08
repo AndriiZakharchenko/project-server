@@ -10,7 +10,7 @@ const holidays = [
     fixed: true,
     global: true,
     counties: null,
-    launchYear: null
+    launchYear: null,
   },
   {
     name: 'Easter Monday',
@@ -20,8 +20,8 @@ const holidays = [
     fixed: true,
     global: true,
     counties: null,
-    launchYear: null
-  }
+    launchYear: null,
+  },
 ];
 
 describe('getListOfPublicHolidays', () => {
@@ -33,13 +33,13 @@ describe('getListOfPublicHolidays', () => {
       {
         name: "New Year's Day",
         localName: "Jour de l'an",
-        date: '2024-01-01'
+        date: '2024-01-01',
       },
       {
         name: 'Easter Monday',
         localName: 'Lundi de Pâques',
-        date: '2024-04-01'
-      }
+        date: '2024-04-01',
+      },
     ]);
   });
 
@@ -78,7 +78,7 @@ describe('checkIfTodayIsPublicHoliday', () => {
 });
 
 describe('getNextPublicHolidays', () => {
-  test('should return status 200', async () => {
+  test('should return data', async () => {
     jest.spyOn(axios, 'get').mockImplementation(() => Promise.resolve({ data: holidays }));
 
     const holidaysResponse = await getNextPublicHolidays('FR');
@@ -86,13 +86,13 @@ describe('getNextPublicHolidays', () => {
       {
         name: "New Year's Day",
         localName: "Jour de l'an",
-        date: '2024-01-01'
+        date: '2024-01-01',
       },
       {
         name: 'Easter Monday',
         localName: 'Lundi de Pâques',
-        date: '2024-04-01'
-      }
+        date: '2024-04-01',
+      },
     ]);
   });
 
