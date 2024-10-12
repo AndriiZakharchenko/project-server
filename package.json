@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon",
+    "start:dev": "nodemon dist/server.js",
     "start": "npm run build && ./node_modules/.bin/pm2 start ./dist/server.js --name ngmp-4-network-app",
     "stop": "./node_modules/.bin/pm2 stop ngmp-4-network-app",
     "build": "tsc",
@@ -36,6 +36,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
+    "nodemon": "^3.1.7",
     "uuidv4": "^6.2.13"
   }
 }
