@@ -30,8 +30,8 @@ export async function createNewUser(request: IncomingMessage, response: ServerRe
   try {
     const { name, email } = await bodyParser(request);
     if (!name || !email) {
-      response.writeHead(400, { 'Content-type': 'text/plain' });
-      response.end('Invalid body data was provided');
+      response.writeHead(400, { 'Content-type': 'application/json' });
+      response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
       return;
     }
 
@@ -57,13 +57,13 @@ export async function createNewUser(request: IncomingMessage, response: ServerRe
       }),
     );
   } catch {
-    response.writeHead(400, { 'Content-type': 'text/plain' });
-    response.end('Invalid body data was provided');
+    response.writeHead(400, { 'Content-type': 'application/json' });
+    response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
   }
 }
 
 export async function deleteUser(request: IncomingMessage, response: ServerResponse) {
-  const id = request.url?.split('/').pop() as string;
+  const id = request.url?.split('/')[3] as string;
   const userIndex = findUserById(id);
 
   if (userIndex === -1) {

@@ -41,8 +41,8 @@ export async function patchHobbies(request: IncomingMessage, response: ServerRes
     const { hobbies } = await bodyParser(request);
 
     if (!hobbies) {
-      response.writeHead(400, { 'Content-type': 'text/plain' });
-      response.end('Invalid body data was provided');
+      response.writeHead(400, { 'Content-type': 'application/json' });
+      response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
       return;
     }
 
@@ -65,7 +65,7 @@ export async function patchHobbies(request: IncomingMessage, response: ServerRes
       }),
     );
   } catch {
-    response.writeHead(400, { 'Content-type': 'text/plain' });
-    response.end('Invalid body data was provided');
+    response.writeHead(400, { 'Content-type': 'application/json' });
+    response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
   }
 }
