@@ -1,4 +1,4 @@
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 import { IncomingMessage, ServerResponse } from 'http';
 import { bodyParser, findUserById } from '../helpers';
 import { db, User } from '../models/user';
@@ -36,7 +36,7 @@ export async function createNewUser(request: IncomingMessage, response: ServerRe
     }
 
     const newUser: User = {
-      id: uuid(), name, email, hobbies: [],
+      id: uuidv4(), name, email, hobbies: [],
     };
     db.push(newUser);
     response.writeHead(201, { 'Content-Type': 'application/json' });

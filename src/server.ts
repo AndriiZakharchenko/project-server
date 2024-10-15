@@ -2,8 +2,7 @@ import http, { IncomingMessage, ServerResponse } from 'http';
 import { router } from './routes';
 
 const server = http.createServer((request: IncomingMessage, response: ServerResponse) => {
-  // @ts-ignore
-  router(request, response).then(() => {});
+  router(request, response);
 });
 
 server.listen(8000, () => {

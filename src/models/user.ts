@@ -8,7 +8,7 @@ export type User = {
 
 export const db: User[] = [
   {
-    id: '5f3b4b29-03dd-4ed9-84a3-6dfcfz4c2be98',
+    id: 'b2502e61-5557-408a-b39d-e4abe7c000d7',
     name: 'John Doe',
     email: 'john@example.com',
     hobbies: ['reading', 'coding'],

@@ -6,13 +6,18 @@ import { getHobbies, patchHobbies } from '../controllers/hobbies';
 export function router(request: IncomingMessage, response: ServerResponse) {
   const { url, method } = request;
 
+  if (!url) {
+    response.writeHead(404, { 'Content-Type': 'text/plain' });
+    return response.end('Invalid URL or Method');
+  }
+
   switch (method) {
     case 'GET':
       if (url === '/api/users') {
         return getUsers(request, response);
       }
 
-      if (/^\/api\/users\/\w+\/hobbies$/.test(url || '')) {
+      if (/^\/api\/users\/[\w-]+\/hobbies$/.test(url)) {
         return getHobbies(request, response);
       }
       break;
@@ -24,19 +29,21 @@ export function router(request: IncomingMessage, response: ServerResponse) {
       break;
 
     case 'DELETE':
-      if (/^\/api\/users\/\w+$/.test(url || '')) {
+      if (url.startsWith('/api/users/')) {
         return deleteUser(request, response);
       }
       break;
 
     case 'PATCH':
-      if (/^\/api\/users\/\w+\/hobbies$/.test(url || '')) {
+      if (/^\/api\/users\/[\w-]+\/hobbies$/.test(url)) {
         return patchHobbies(request, response);
       }
       break;
 
     default:
-      response.writeHead(400, { 'Content-Type': 'text/plain' });
-      response.end('Invalid URL or Method');
+      break;
   }
+
+  response.writeHead(404, { 'Content-Type': 'text/plain' });
+  response.end('Invalid URL or Method');
 }

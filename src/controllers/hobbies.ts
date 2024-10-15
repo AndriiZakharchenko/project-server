@@ -12,7 +12,10 @@ export async function getHobbies(request: IncomingMessage, response: ServerRespo
     return;
   }
 
-  response.writeHead(200, { 'Content-Type': 'application/json' });
+  response.writeHead(200, {
+    'Content-Type': 'application/json',
+    'Cache-Control': 'private, max-age=3600',
+  });
   response.end(
     JSON.stringify({
       data: {
