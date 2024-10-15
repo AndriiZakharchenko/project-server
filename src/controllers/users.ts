@@ -6,7 +6,7 @@ import { db, User } from '../models/user';
 export async function getUsers(request: IncomingMessage, response: ServerResponse) {
   response.writeHead(200, {
     'Content-Type': 'application/json',
-    'Cache-Control': 'private, max-age=3600',
+    'Cache-Control': 'public, max-age=3600',
   });
   response.end(
     JSON.stringify({
