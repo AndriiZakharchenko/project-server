@@ -63,6 +63,8 @@ export async function createNewUser(request: IncomingMessage, response: ServerRe
 }
 
 export async function deleteUser(request: IncomingMessage, response: ServerResponse) {
+  // (.+)$ - захоплює будь-які символи, що йдуть після '/users/' і тривають до кінця рядка.
+  // const [, id] = (request.url && request.url.match(/^\/api\/users\/([\w-]+)$/)) || [];
   const id = request.url?.split('/')[3] as string;
   const userIndex = findUserById(id);
 
