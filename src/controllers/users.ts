@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { IncomingMessage, ServerResponse } from 'http';
-import { bodyParser, findUserById } from '../helpers';
+import { bodyParser, findUserById, sendErrorResponse } from '../helpers';
 import { db, User } from '../models/user';
 
 export async function getUsers(request: IncomingMessage, response: ServerResponse) {
@@ -27,39 +27,45 @@ export async function getUsers(request: IncomingMessage, response: ServerRespons
 }
 
 export async function createNewUser(request: IncomingMessage, response: ServerResponse) {
+  let name: string;
+  let email: string;
+
   try {
-    const { name, email } = await bodyParser(request);
-    if (!name || !email) {
-      response.writeHead(400, { 'Content-type': 'application/json' });
-      response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
+    const { name: nameResponse, email: emailResponse } = await bodyParser(request);
+
+    if (!nameResponse || !emailResponse) {
+      sendErrorResponse(response, 400, 'Invalid body data was provided');
       return;
     }
 
-    const newUser: User = {
-      id: uuidv4(), name, email, hobbies: [],
-    };
-    db.push(newUser);
-    response.writeHead(201, { 'Content-Type': 'application/json' });
-    response.end(
-      JSON.stringify({
-        data: {
-          user: {
-            id: newUser.id,
-            name: newUser.name,
-            email: newUser.email,
-          },
-          links: {
-            self: `/api/users/${newUser.id}`,
-            hobbies: `/api/users/${newUser.id}/hobbies`,
-          },
-        },
-        error: null,
-      }),
-    );
+    name = nameResponse;
+    email = emailResponse;
   } catch {
-    response.writeHead(400, { 'Content-type': 'application/json' });
-    response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
+    sendErrorResponse(response, 400, 'Invalid body data was provided');
+    return;
   }
+
+  const newUser: User = {
+    id: uuidv4(), name, email, hobbies: [],
+  };
+  db.push(newUser);
+  response.writeHead(201, { 'Content-Type': 'application/json' });
+  response.end(
+    JSON.stringify({
+      data: {
+        user: {
+          id: newUser.id,
+          name: newUser.name,
+          email: newUser.email,
+        },
+        links: {
+          self: `/api/users/${newUser.id}`,
+          hobbies: `/api/users/${newUser.id}/hobbies`,
+        },
+      },
+      error: null,
+    }),
+  );
 }
 
 export async function deleteUser(request: IncomingMessage, response: ServerResponse) {
@@ -69,8 +75,7 @@ export async function deleteUser(request: IncomingMessage, response: ServerRespo
   const userIndex = findUserById(id);
 
   if (userIndex === -1) {
-    response.writeHead(404, { 'Content-type': 'application/json' });
-    response.end(JSON.stringify({ data: null, error: `User with id ${id} doesn't exist` }));
+    sendErrorResponse(response, 404, `User with id ${id} doesn't exist`);
     return;
   }
 

@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { bodyParser, findUserById } from '../helpers';
+import { bodyParser, findUserById, sendErrorResponse } from '../helpers';
 import { db } from '../models/user';
 
 export async function getHobbies(request: IncomingMessage, response: ServerResponse) {
@@ -7,8 +7,7 @@ export async function getHobbies(request: IncomingMessage, response: ServerRespo
   const userIndex = findUserById(id);
 
   if (userIndex === -1) {
-    response.writeHead(404, { 'Content-type': 'application/json' });
-    response.end(JSON.stringify({ data: null, error: `User with id ${id} doesn't exist` }));
+    sendErrorResponse(response, 400, `User with id ${id} doesn't exist`);
     return;
   }
 
@@ -35,40 +34,39 @@ export async function patchHobbies(request: IncomingMessage, response: ServerRes
   const userIndex = findUserById(id);
 
   if (userIndex === -1) {
-    response.writeHead(404, { 'Content-type': 'application/json' });
-    response.end(JSON.stringify({ data: null, error: `User with id ${id} doesn't exist` }));
+    sendErrorResponse(response, 404, `User with id ${id} doesn't exist`);
     return;
   }
 
+  let hobbies: string[] = [];
+
   try {
-    const { hobbies } = await bodyParser(request);
+    const { hobbies: hobbiesResponse } = await bodyParser(request);
 
-    if (!hobbies) {
-      response.writeHead(400, { 'Content-type': 'application/json' });
-      response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
-      return;
+    if (hobbiesResponse) {
+      hobbies = hobbiesResponse;
     }
-
-    db[userIndex].hobbies = Array.from(new Set([...db[userIndex].hobbies, ...hobbies]));
-    response.writeHead(200, { 'Content-Type': 'application/json' });
-    response.end(
-      JSON.stringify({
-        data: {
-          user: {
-            id: db[userIndex].id,
-            name: db[userIndex].name,
-            email: db[userIndex].email,
-          },
-          links: {
-            self: `/api/users/${db[userIndex].id}`,
-            hobbies: `/api/users/${db[userIndex].id}/hobbies`,
-          },
-        },
-        error: null,
-      }),
-    );
   } catch {
-    response.writeHead(400, { 'Content-type': 'application/json' });
-    response.end(JSON.stringify({ data: null, error: 'Invalid body data was provided' }));
+    sendErrorResponse(response, 400, 'Invalid body data was provided');
+    return;
   }
+
+  db[userIndex].hobbies = Array.from(new Set([...db[userIndex].hobbies, ...hobbies]));
+  response.writeHead(200, { 'Content-Type': 'application/json' });
+  response.end(
+    JSON.stringify({
+      data: {
+        user: {
+          id: db[userIndex].id,
+          name: db[userIndex].name,
+          email: db[userIndex].email,
+        },
+        links: {
+          self: `/api/users/${db[userIndex].id}`,
+          hobbies: `/api/users/${db[userIndex].id}/hobbies`,
+        },
+      },
+      error: null,
+    }),
+  );
 }
