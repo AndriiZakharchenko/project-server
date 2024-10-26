@@ -6,6 +6,10 @@ export class ProductService {
     try {
       const products = await Product.getAllProducts();
 
+      if (!products) {
+        return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };
+      }
+
       return { data: products, error: null };
     } catch (error) {
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
@@ -17,7 +21,7 @@ export class ProductService {
       const product = await Product.getProduct(productId);
 
       if (!product) {
-        return { data: null, error: { message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND } };
+        return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };
       }
 
       return {

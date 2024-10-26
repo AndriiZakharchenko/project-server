@@ -7,16 +7,16 @@ export function validateUser(req: Request, res: Response, next: NextFunction) {
   const isUserExist = cart.find((item) => item.userId === userId);
 
   if (!userId) {
-    return res.status(403).json({
+    return res.status(401).json({
       data: null,
-      error: { message: ERROR_MESSAGES[403].FORBIDDEN },
+      error: { message: ERROR_MESSAGES[401].UNAUTHORIZED },
     });
   }
 
   if (!isUserExist) {
-    return res.status(401).json({
+    return res.status(404).json({
       data: null,
-      error: { message: ERROR_MESSAGES[401].UNAUTHORIZED },
+      error: { message: ERROR_MESSAGES[404].NOT_FOUND },
     });
   }
 

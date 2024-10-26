@@ -24,7 +24,7 @@ export class Cart {
     if (!product) {
       return Promise.resolve({
         data: null,
-        error: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND,
+        error: ERROR_MESSAGES[404].NOT_FOUND,
       });
     }
 
@@ -46,7 +46,7 @@ export class Cart {
     if (!product) {
       return Promise.resolve({
         data: null,
-        error: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND,
+        error: ERROR_MESSAGES[404].NOT_FOUND,
       });
     }
 

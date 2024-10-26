@@ -3,13 +3,10 @@ export const ERROR_MESSAGES = {
     BAD_REQUEST: 'Bad request',
   },
   401: {
-    UNAUTHORIZED: 'User is not authorized',
-  },
-  403: {
-    FORBIDDEN: 'You must be authorized user',
+    UNAUTHORIZED: 'Unauthorized',
   },
   404: {
-    PRODUCT_NOT_FOUND: 'Product not found',
+    NOT_FOUND: 'Not Found',
   },
   500: {
     SERVER_ERROR: 'Internal Server error',
