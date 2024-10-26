@@ -6,7 +6,7 @@ export class ProductService {
     try {
       const products = await Product.getAllProducts();
 
-      if (products && products.length === 0) {
+      if ((Array.isArray(products) && products.length === 0) || !products) {
         return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };
       }
 
