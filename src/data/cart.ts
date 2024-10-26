@@ -6,8 +6,6 @@ export const cart: OrderEntity[] = [
     id: 'id',
     userId: 'test-user-id',
     cartId: '1434fec6-cd85-420d-95c0-eee2301a971d',
-    status: 'created',
-    total: 400,
     items: [
       {
         product: {
@@ -28,5 +26,7 @@ export const cart: OrderEntity[] = [
         count: 2,
       },
     ],
+    status: 'created',
+    total: 400,
   },
 ];

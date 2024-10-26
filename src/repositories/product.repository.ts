@@ -1,10 +1,13 @@
 import { products } from '../data/products';
 
-export const getAllProductsRepository = () => {
-  // Simulating data fetching from a database
-  return products;
-};
+export class Product {
+  static getAllProducts() {
+    return Promise.resolve(products);
+  }
 
-export const getProductRepository = (productId: string) => {
-  return products.find((product) => product.id === productId);
-};
+  static getProduct(productId: string) {
+    const product = products.find((item) => item.id === productId);
+
+    return Promise.resolve(product);
+  }
+}

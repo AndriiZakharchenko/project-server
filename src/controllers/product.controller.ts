@@ -1,39 +1,17 @@
 import { Request, Response } from 'express';
-import { getAllProductsService, getProductService } from '../services/product.service';
-import { validateUser } from '../validations/user.validation';
+import { ProductService } from '../services/product.service';
+import { getStatus } from '../helpers/status.helper';
 
-export const getAllProductsController = async (req: Request, res: Response) => {
-  try {
-    validateUser(req, res);
-
-    const products = await getAllProductsService();
-    return res.status(200).json({
-      data: products,
-      error: null,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      data: null,
-      error: { message: 'Internal Server error' },
-    });
+export class ProductController {
+  static async getAllProducts(req: Request, res: Response) {
+    const data = await ProductService.getAllProducts();
+    const status = data.error === null ? 200 : getStatus(data.error.message);
+    return res.status(status).json(data);
   }
-};
 
-export const getProductController = async (req: Request, res: Response) => {
-  try {
-    validateUser(req, res);
-
-    const product = await getProductService(req.params.productId);
-    return res.status(200).json({
-      data: product,
-      error: null,
-    });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({
-      data: null,
-      error: { message: 'Internal Server error' },
-    });
+  static async getProduct(req: Request, res: Response) {
+    const data = await ProductService.getProduct(req.params.productId);
+    const status = data.error === null ? 200 : getStatus(data.error.message);
+    return res.status(status).json(data);
   }
-};
+}
