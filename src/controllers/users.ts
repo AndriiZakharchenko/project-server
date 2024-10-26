@@ -27,23 +27,26 @@ export async function getUsers(request: IncomingMessage, response: ServerRespons
 }
 
 export async function createNewUser(request: IncomingMessage, response: ServerResponse) {
-  let name: string;
-  let email: string;
+  let data = [];
 
   try {
-    const { name: nameResponse, email: emailResponse } = await bodyParser(request);
+    data = await bodyParser(request);
 
-    if (!nameResponse || !emailResponse) {
-      sendErrorResponse(response, 400, 'Invalid body data was provided');
-      return;
+    if (!data.name || !data.email) {
+      throw new Error('Name and email are required');
+    }
+  } catch (error: unknown) {
+    let errorMessage = 'An unknown error occurred';
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
     }
 
-    name = nameResponse;
-    email = emailResponse;
-  } catch {
-    sendErrorResponse(response, 400, 'Invalid body data was provided');
+    sendErrorResponse(response, 400, errorMessage);
     return;
   }
+
+  const { name, email } = data;
 
   const newUser: User = {
     id: uuidv4(), name, email, hobbies: [],

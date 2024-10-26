@@ -38,18 +38,26 @@ export async function patchHobbies(request: IncomingMessage, response: ServerRes
     return;
   }
 
-  let hobbies: string[] = [];
+  let data = [];
 
   try {
-    const { hobbies: hobbiesResponse } = await bodyParser(request);
+    data = await bodyParser(request);
 
-    if (hobbiesResponse) {
-      hobbies = hobbiesResponse;
+    if (!data.hobbies && data.hobbies.length === 0) {
+      throw new Error('Invalid body data was provided');
     }
-  } catch {
-    sendErrorResponse(response, 400, 'Invalid body data was provided');
+  } catch (error: unknown) {
+    let errorMessage = 'An unknown error occurred';
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+
+    sendErrorResponse(response, 400, errorMessage);
     return;
   }
+
+  const { hobbies } = data;
 
   db[userIndex].hobbies = Array.from(new Set([...db[userIndex].hobbies, ...hobbies]));
   response.writeHead(200, { 'Content-Type': 'application/json' });
