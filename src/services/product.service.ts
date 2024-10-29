@@ -1,10 +1,10 @@
 import { ERROR_MESSAGES } from '../constants';
-import { Product } from '../repositories/product.repository';
+import { ProductRepository } from '../repositories/product.repository';
 
 export class ProductService {
   static async getAllProducts() {
     try {
-      const products = await Product.getAllProducts();
+      const products = await ProductRepository.getAllProducts();
 
       if ((Array.isArray(products) && products.length === 0) || !products) {
         return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };
@@ -18,7 +18,7 @@ export class ProductService {
 
   static async getProduct(productId: string) {
     try {
-      const product = await Product.getProduct(productId);
+      const product = await ProductRepository.getProduct(productId);
 
       if (!product) {
         return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };

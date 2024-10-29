@@ -1,6 +1,6 @@
 import { products } from '../data/products';
 
-export class Product {
+export class ProductRepository {
   static getAllProducts() {
     return Promise.resolve(products);
   }

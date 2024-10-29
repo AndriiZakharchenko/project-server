@@ -10,7 +10,7 @@ type CartItem = {
   count: number;
 }
 
-export class Cart {
+export class CartRepository {
   static getCart(userId: string) {
     const cart = usersCart.find((item) => item.userId === userId);
 

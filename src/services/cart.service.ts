@@ -1,5 +1,5 @@
 import { ERROR_MESSAGES } from '../constants';
-import { Cart } from '../repositories/cart.repository';
+import { CartRepository } from '../repositories/cart.repository';
 import { OrderEntity } from '../schemas/order.entity';
 
 type CartItem = {
@@ -10,7 +10,7 @@ type CartItem = {
 export class CartService {
   static async getCart(userId: string) {
     try {
-      const { id, items, total } = await Cart.getCart(userId) as OrderEntity;
+      const { id, items, total } = await CartRepository.getCart(userId) as OrderEntity;
 
       return {
         data: {
@@ -29,7 +29,7 @@ export class CartService {
 
   static async createCart(userId: string, { productId, count }: CartItem) {
     try {
-      const response = await Cart.createCart(userId, { productId, count });
+      const response = await CartRepository.createCart(userId, { productId, count });
 
       if (response.error) {
         return { data: null, error: { message: response.error } };
@@ -49,7 +49,7 @@ export class CartService {
   static async updateCart(userId: string, { productId, count }: CartItem) {
     try {
       // eslint-disable-next-line max-len
-      const response = await Cart.updateCart(userId, { productId, count });
+      const response = await CartRepository.updateCart(userId, { productId, count });
 
       if (response.error) {
         return { data: null, error: { message: response.error } };
@@ -74,7 +74,7 @@ export class CartService {
 
   static async deleteCart(userId: string) {
     try {
-      await Cart.deleteCart(userId);
+      await CartRepository.deleteCart(userId);
 
       return {
         data: {
