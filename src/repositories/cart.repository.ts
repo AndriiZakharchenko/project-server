@@ -1,74 +1,66 @@
-import { cart as cartData } from '../data/cart';
-import { OrderEntity } from '../schemas/order.entity';
-import { products } from '../data/products';
 import { ERROR_MESSAGES } from '../constants';
-
-const usersCart: OrderEntity[] = structuredClone(cartData);
-
-type CartItem = {
-  productId: string;
-  count: number;
-}
+import CartModel from '../models/cart.model';
+import { ICartItem, IProduct } from '../types';
+import ProductModel from '../models/product.model';
 
 export class CartRepository {
-  static getCart(userId: string) {
-    const cart = usersCart.find((item) => item.userId === userId);
+  static async getCart(userId: string) {
+    try {
+      const data = await CartModel.find({ 'cart.id': userId });
 
-    return Promise.resolve(cart);
+      if (!data || JSON.stringify(data) === '[]') {
+        const newCart = new CartModel({
+          cart: {
+            id: userId,
+            items: [],
+          },
+        });
+
+        await newCart.save();
+        return newCart;
+      }
+
+      return data;
+    } catch (error) {
+      return error;
+    }
   }
 
-  static createCart(userId: string, { productId, count }: CartItem) {
-    const cartIndex = usersCart.findIndex((item) => item.userId === userId);
-    const product = products.find((item) => item.id === productId);
+  static async updateCart(userId: string, { productId, count }: ICartItem) {
+    try {
+      const data = await CartModel.findOne({ 'cart.id': userId }, { 'cart.items': { $elemMatch: { 'product.id': productId } } });
+      const product = await ProductModel.findOne({ id: productId });
 
-    if (!product) {
-      return Promise.resolve({
-        data: null,
-        error: ERROR_MESSAGES[404].NOT_FOUND,
-      });
+      if (!product) {
+        return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };
+      }
+
+      if (!data || JSON.stringify(data) === '[]') {
+        const newCart = new CartModel({
+          cart: {
+            id: userId,
+            items: [
+              {
+                product,
+                count,
+              },
+            ],
+          },
+        });
+
+        console.log(newCart, 'newCart');
+
+        await newCart.save();
+        return { data: newCart, error: null };
+      }
+
+      return { data, error: null };
+    } catch (error) {
+      return error;
     }
-
-    usersCart[cartIndex].items.push({
-      product,
-      count,
-    });
-    usersCart[cartIndex].total = product.price * count;
-
-    return Promise.resolve({ data: usersCart[cartIndex], error: null });
-  }
-
-  static updateCart(userId: string, { productId, count }: CartItem) {
-    const cartIndex = usersCart.findIndex((item) => item.userId === userId);
-    // eslint-disable-next-line max-len
-    const productIndex = usersCart[cartIndex].items.findIndex((item) => item.product.id === productId);
-    const product = products.find((item) => item.id === productId);
-
-    if (!product) {
-      return Promise.resolve({
-        data: null,
-        error: ERROR_MESSAGES[404].NOT_FOUND,
-      });
-    }
-
-    if (productIndex === -1) {
-      usersCart[cartIndex].items.push({
-        product,
-        count,
-      });
-    } else {
-      usersCart[cartIndex].items[productIndex].count = count;
-    }
-
-    // eslint-disable-next-line max-len
-    usersCart[cartIndex].total = usersCart[cartIndex].items.reduce((acc, item) => acc + item.product.price * item.count, 0);
-    return Promise.resolve({ data: usersCart[cartIndex], error: null });
   }
 
   static deleteCart(userId: string) {
-    const findIndex = usersCart.findIndex((item) => item.userId === userId);
-    usersCart[findIndex].items = [];
-    usersCart[findIndex].total = 0;
-
-    return Promise.resolve(true);
+    return CartModel.deleteOne({ 'cart.id': userId });
   }
 }

@@ -1,13 +1,11 @@
-import { products } from '../data/products';
+import ProductModel from '../models/product.model';
 
 export class ProductRepository {
   static getAllProducts() {
-    return Promise.resolve(products);
+    return ProductModel.find();
   }
 
   static getProduct(productId: string) {
-    const product = products.find((item) => item.id === productId);
-
-    return Promise.resolve(product);
+    return ProductModel.findOne({ id: productId });
   }
 }

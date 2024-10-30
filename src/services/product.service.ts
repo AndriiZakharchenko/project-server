@@ -6,7 +6,7 @@ export class ProductService {
     try {
       const products = await ProductRepository.getAllProducts();
 
-      if ((Array.isArray(products) && products.length === 0) || !products) {
+      if (!products || JSON.stringify(products) === '[]') {
         return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };
       }
 

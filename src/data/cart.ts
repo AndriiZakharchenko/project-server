@@ -1,7 +1,4 @@
-import { CartEntity } from '../schemas/cart.entity';
-import { OrderEntity } from '../schemas/order.entity';
-
-export const cart: OrderEntity[] = [
+export const cart = [
   {
     id: 'id',
     userId: 'test-user-id',

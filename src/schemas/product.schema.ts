@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Joi from 'joi';
 
 export const updateCartSchema = Joi.object({

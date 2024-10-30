@@ -1,9 +1,12 @@
+import './config/database';
 import express, { Router } from 'express';
 import { ProductController } from './controllers/product.controller';
 import { validateUser } from './middlewares/user.middleware';
 import { CartController } from './controllers/cart.controller';
 import { validateSchema } from './middlewares/validate.middleware';
 import { updateCartSchema } from './schemas/product.schema';
+import { ERROR_MESSAGES } from './constants';
+import { OrderController } from './controllers/order.controller';
 
 const PORT = process.env.PORT || 8000;
 
@@ -18,15 +21,17 @@ router.get('/api/products/:productId', validateUser, ProductController.getProduc
 
 // Cart routes
 router.get('/api/profile/cart', validateUser, CartController.getCart);
-router.post('/api/profile/cart/checkout', validateUser, validateSchema(updateCartSchema), CartController.createCart);
 router.put('/api/profile/cart', validateUser, validateSchema(updateCartSchema), CartController.updateCart);
 router.delete('/api/profile/cart', validateUser, CartController.deleteCart);
+
+// Order routes
+router.post('/api/profile/cart/checkout', validateUser, OrderController.createOrder);
 
 app.use(router);
 
 app.all('*', (req, res) => {
   res.status(404);
-  res.json({ message: '404 Not Found.' });
+  res.json({ message: ERROR_MESSAGES[404].NOT_FOUND });
 });
 
 app.listen(PORT, () => {

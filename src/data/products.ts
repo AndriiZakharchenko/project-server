@@ -1,8 +1,4 @@
-import { ProductEntity } from '../schemas/product.entity';
-
-// Please do not change predefined products here. You are welcome to add new if you want.
-
-export const products: ProductEntity[] = [
+export const products = [
   {
     id: '51422fcd-0366-4186-ad5b-c23059b6f64f',
     title: 'Book',
