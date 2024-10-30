@@ -1,14 +1,19 @@
 import OrderModel from '../models/order.model';
+import ProductModel from '../models/product.model';
 
 export class OrderRepository {
   static async createOrder(userId: string) {
     try {
-      const data = await OrderModel.find({ userId });
+      const data = await OrderModel.findOne({ userId });
+      const product = await ProductModel.findOne({ id: 'c28e1102-a952-4c8e-92f7-e2c34d30af95' });
 
       if (!data || JSON.stringify(data) === '[]') {
         const newCart = new OrderModel({
           userId,
-          items: [],
+          items: [{
+            product,
+            count: 1,
+          }],
           payment: {
             type: 'credit card',
             address: '123 Main St, Example City',
