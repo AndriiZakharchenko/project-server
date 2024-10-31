@@ -9,15 +9,9 @@ export class CartController {
     return res.status(status).json(data);
   }
 
-  // static async createCart(req: Request, res: Response) {
-  //   const data = await CartService.createCart(req.headers['x-user-id'] as string, req.body);
-  //   const status = data.error === null ? 201 : getStatus(data.error.message);
-  //   return res.status(status).json(data);
-  // }
-
   static async updateCart(req: Request, res: Response) {
     const data = await CartService.updateCart(req.headers['x-user-id'] as string, req.body);
-    // const status = data.error === null ? 200 : getStatus(data.error.message);
+    const status = data.error === null ? 200 : getStatus(data.error.message);
     return res.status(200).json(data);
   }
 

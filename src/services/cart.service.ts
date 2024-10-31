@@ -19,13 +19,11 @@ export class CartService {
 
   static async updateCart(userId: string, { productId, count }: ICartItem) {
     try {
-      // eslint-disable-next-line max-len
-      const { data, error } = await CartRepository.updateCart(userId, { productId, count }) as IUpdateCartResponse;
-
-      console.log(data, 'data');
+      const { data, error } = await CartRepository
+        .updateCart(userId, { productId, count }) as IUpdateCartResponse;
 
       if (error) {
-        return { data: null, error: { message: error } };
+        return { data: null, error: { message: error.message } };
       }
 
       return {
