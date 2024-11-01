@@ -16,9 +16,9 @@ export class ProductService {
     }
   }
 
-  static async getProduct(productId: string) {
+  static async getProductById(productId: string) {
     try {
-      const product = await ProductRepository.getProduct(productId);
+      const product = await ProductRepository.getProductById(productId);
 
       if (!product) {
         return { data: null, error: { message: ERROR_MESSAGES[404].NOT_FOUND } };

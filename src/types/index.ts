@@ -59,7 +59,7 @@ export interface ICartItem {
   count: number;
 }
 
-export interface IUpdateCartResponse {
-  data: ICart | null;
+export interface ICartResponse {
+  data: ICart;
   error: { message: string } | null;
 }

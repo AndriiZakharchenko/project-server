@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ERROR_MESSAGES } from '../constants';
-import UserModel from '../models/user.model';
+import UserModel from '../schemas/user.schema';
 
 export async function validateUser(req: Request, res: Response, next: NextFunction) {
   const userId = req.headers['x-user-id'];

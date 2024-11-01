@@ -1,11 +1,11 @@
-import ProductModel from '../models/product.model';
+import ProductModel from '../schemas/product.schema';
 
 export class ProductRepository {
   static getAllProducts() {
     return ProductModel.find();
   }
 
-  static getProduct(productId: string) {
+  static getProductById(productId: string) {
     return ProductModel.findOne({ id: productId });
   }
 }

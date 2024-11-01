@@ -4,7 +4,7 @@ import { ProductController } from './controllers/product.controller';
 import { validateUser } from './middlewares/user.middleware';
 import { CartController } from './controllers/cart.controller';
 import { validateSchema } from './middlewares/validate.middleware';
-import { updateCartSchema } from './schemas/product.schema';
+import { updateCartSchema } from './validations/product.validation';
 import { ERROR_MESSAGES } from './constants';
 import { OrderController } from './controllers/order.controller';
 
@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Product routes
 router.get('/api/products', validateUser, ProductController.getAllProducts);
-router.get('/api/products/:productId', validateUser, ProductController.getProduct);
+router.get('/api/products/:productId', validateUser, ProductController.getProductById);
 
 // Cart routes
 router.get('/api/profile/cart', validateUser, CartController.getCart);

@@ -12,16 +12,4 @@ const CartSchema: Schema = new Schema({
   total: { type: Number, default: 0 },
 });
 
-CartSchema.pre<ICartModel>('save', async function calculateTotal(next) {
-  await this.populate('cart.items.product');
-
-  if (!this.cart.items || JSON.stringify(this.cart.items) === '[]') {
-    this.total = 0;
-    return next();
-  }
-
-  this.total = this.cart.items.reduce((acc, item) => acc + (item.product.price * item.count), 0);
-  return next();
-});
-
 export default mongoose.model<ICartModel>('Cart', CartSchema);

@@ -93,11 +93,62 @@ If you have run out of energy or time for your project, put a note at the top of
 
 
 ## Console MongoDB
+## https://www.youtube.com/watch?v=UqhM2we3o-s&list=PLNkWIWHIRwMFJ-3-gI7GC5JDg1ivbIKNR&index=21
 - docker compose up -d
 - docker exec -it mongo_container mongosh -u root -p nodegmp --authenticationDatabase admin
 - use mydatabase - join to database
+- show collections - show collections in selected database
+- show dbs - show databases
+- db.createCollection('products') - create collection
+- db.products.validate() - validate collection
+- db.products.storageSize() - show storage size
+- db.products.totalSize() - show total size
+- db.dropDatabase() - remove all databases
+
 - db.products.insertMany([{}]) - add products
 - db.products.insertOne({}) - add one product
-- db.users.find().pretty(); - show all users
 - db.products.drop(); - remove [products] collection
+- db.products.deleteOne({}) - remove one product
+- db.products.deleteOne({name: 'product1'}) - remove one product
+- db.products.deleteMany({name: 'product1'}) - remove all products
+- db.products.deleteMany({}) - remove all products
+-
+- db.products.updateOne({name: 'product1'}, {$set: {price: 100}}) - update one product
+- db.products.updateMany({name: 'product1'}, {$set: {price: 100}}) - update all products
+- db.products.findOneAndDelete({name: 'product1'}) - find one product and delete
+- db.products.findOneAndUpdate({name: 'product1'}, {$set: {price: 100}}) - find one product and update
+- db.products.findOneAndReplace({name: 'product1'}, {name: 'product1', price: 100}) - find one product and replace
+- db.products.findByIdAndDelete('_id') - find product by id and delete
+- db.products.findByIdAndUpdate('_id', {$set: {price: 100}}) - find product by id and update
+
+- db.products.find().pretty(); - show all products
+- db.products.find().limit(2).pretty(); - show 2 products
+- db.products.find().skip(2).pretty(); - show products with skip 2
+- db.products.find().sort({price: 1}).pretty(); - sort products by price (1 means ascending, -1 means descending)
+- db.products.find().pretty(); - show all products
+- db.products.find({name: 'product1'}).pretty() - find product by name
+- db.products.find({price: {$gt: 100}}).pretty() - find products with price greater than 100
+- db.products.find({price: {$lt: 100}}).pretty() - find products with price less than 100
+- db.products.find({price: {$gte: 100}}).pretty() - find products with price greater than or equal to 100
+- db.products.find({price: {$lte: 100}}).pretty() - find products with price less than or equal to 100
+- db.products.find({price: {$eq: 100}}).pretty() - find products with price equal to 100
+- db.products.find({price: {$ne: 100}}).pretty() - find products with price not equal to 100
+- db.products.find({price: {$in: [100, 200]}}).pretty() - find products with price in [100, 200]
+- db.products.find({price: {$nin: [100, 200]}}).pretty() - find products with price not in [100, 200]
+- db.products.find({price: {$exists: true}}).pretty() - find products with price exists
+- db.products.find({price: {$exists: false}}).pretty() - find products with price not exists
+- db.products.find({name: {$regex: 'product'}}).pretty() - find products with name contains 'product'
+- db.products.find({ $or: [{name: 'product1'}, {price: 100}] }).pretty() - find products with name equals 'product1' or price equals 100
+- db.products.find({ $and: [{name: 'product1'}, {price: 100}] }).pretty() - find products with name equals 'product1' and price equals 100
+- db.products.find({ $not: {name: 'product1'} }).pretty() - find products with name not equals 'product1'
+- db.products.find({ $nor: [{name: 'product1'}, {price: 100}] }).pretty() - find products with name not equals 'product1' and price not equals 100
+- db.products.find({name: 'product1'}, {name: 1, price: 1}).pretty() - find products with name equals 'product1' and show only name and price
+- db.products.findById('_id').pretty() - find product by id
+
+- db.products.replaceOne({name: 'product1'}, {name: 'product1', price: 100}) - replace product completely
+- db.products.replaceOne({name: 'product1'}, {name: 'product1', price: 100, description: 'description'}) - replace product
+- db.products.replaceMany({name: 'product1'}, {name: 'product1', price: 100}) - replace all products
+
+- db.products.distinct('price') - find distinct prices and return array with prices
 - exit - exit from mongo shell
+

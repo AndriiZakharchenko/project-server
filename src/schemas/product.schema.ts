@@ -1,8 +1,12 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import Joi from 'joi';
+import mongoose, { Schema } from 'mongoose';
+import { randomUUID } from 'crypto';
+import { IProductModel } from '../types';
 
-export const updateCartSchema = Joi.object({
-  productId: Joi.string().required(),
-  count: Joi.number().integer().min(0).strict()
-    .required(),
+const ProductSchema: Schema = new Schema({
+  id: { type: String, default: () => randomUUID() },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
 });
+
+export default mongoose.model<IProductModel>('Product', ProductSchema);
