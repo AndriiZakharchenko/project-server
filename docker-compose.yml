@@ -1,14 +1,12 @@
+version: '3'
 services:
-  mongodb:
-    image: mongo
-    container_name: mongo_container
+  postgres-db:
+    image: "postgres:12"
+    container_name: "node-gmp-db"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: nodegmp
+      - POSTGRES_USER=node_gmp
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=node_gmp
+    restart: always
     ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:
+      - '5432:5432'

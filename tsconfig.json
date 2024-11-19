@@ -1,3 +1,18 @@
+//{
+//  "compilerOptions": {
+//    "strict": true,
+//    "target": "ES2018",
+//    "module": "CommonJS",
+//    "outDir": "./dist",
+//    "rootDir": "./",
+//    "resolveJsonModule": true,
+//    "lib": ["es6", "es2017", "dom"],
+//    "experimentalDecorators": true,
+//    "emitDecoratorMetadata": true,
+//    "esModuleInterop": true
+//  }
+//}
+
 {
   "compilerOptions": {
     "target": "ES2018",
@@ -9,3 +24,4 @@
     "resolveJsonModule": true,
   }
 }
+

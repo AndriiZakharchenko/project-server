@@ -9,9 +9,9 @@ export class ProductController {
     return res.status(status).json(data);
   }
 
-  static async getProductById(req: Request, res: Response) {
-    const data = await ProductService.getProductById(req.params.productId);
-    const status = data.error === null ? 200 : getStatus(data.error.message);
-    return res.status(status).json(data);
-  }
+  // static async getProductById(req: Request, res: Response) {
+  //   const data = await ProductService.getProductById(req.params.productId);
+  //   const status = data.error === null ? 200 : getStatus(data.error.message);
+  //   return res.status(status).json(data);
+  // }
 }
