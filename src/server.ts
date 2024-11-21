@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import express, { Router } from 'express';
-import { RequestContext } from '@mikro-orm/core';
-import { MikroORM } from '@mikro-orm/postgresql';
+// import { RequestContext } from '@mikro-orm/core';
+// import { MikroORM } from '@mikro-orm/postgresql';
 import pool from '../pg-pool.config';
 import { ERROR_MESSAGES } from './constants';
 import { ProductController } from './controllers/product.controller';
