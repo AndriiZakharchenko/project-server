@@ -1,18 +1,37 @@
 import { RequestContext } from '@mikro-orm/core';
 import { Product } from '../entities';
-import pool from '../../pg-pool.config';
-import { executeQuery } from '../helpers/executeQuery.helper';
+// import pool from '../../pg-pool.config';
+// import { executeQuery } from '../helpers/executeQuery.helper';
 
 export class ProductRepository {
   static async getAllProducts() {
-    console.log('test');
-    // eslint-disable-next-line max-len
-    // console.log('RequestContext.getEntityManager()!.find(Product, {})', RequestContext.getEntityManager()!.find(Product, {}));
-    // return RequestContext.getEntityManager()!.find(Product, {});
-    const query = 'SELECT * FROM products';
+    // Get the EntityManager from the RequestContext
+    const em = RequestContext.getEntityManager();
 
-    return executeQuery(query);
+    if (!em) {
+      throw new Error('EntityManager not available in RequestContext');
+    }
+
+    try {
+      // Fetch all products
+      const products = await em.find(Product, {});
+      console.log('Fetched products:', products);
+      return products;
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      throw error; // Rethrow the error for handling in a higher layer
+    }
   }
+
+  // static async getAllProducts() {
+  //   const a = RequestContext.getEntityManager()!.find(Product, {});
+  //   console.log('test', a);
+  //   return a;
+  // SQL query
+  // const query = 'SELECT * FROM products';
+  //
+  // return executeQuery(query);
+  // }
 
   // static async getProductById(productId: string) {
   //   return orm.em.findOne(Product, { id: productId });

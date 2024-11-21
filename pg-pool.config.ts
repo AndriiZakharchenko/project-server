@@ -1,6 +1,6 @@
 import { Pool, PoolConfig } from 'pg';
 
-const dbConfig: PoolConfig = {
+const pool = new Pool({
   host: 'localhost',
   port: 5432,
   user: 'node_gmp',
@@ -8,8 +8,6 @@ const dbConfig: PoolConfig = {
   database: 'node_gmp',
   max: 10,
   idleTimeoutMillis: 30000,
-};
-
-const pool = new Pool(dbConfig);
+} as PoolConfig);
 
 export default pool;
