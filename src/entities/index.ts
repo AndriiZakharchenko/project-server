@@ -1,4 +1,5 @@
-import { User } from './user.entity';
-import { Product } from './product.entity';
+import { Users } from './user.entity';
+import { Carts } from './cart.entity';
+import { Products } from './product.entity';
 
-export { User, Product };
+export { Users, Carts, Products };

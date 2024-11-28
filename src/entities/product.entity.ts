@@ -1,8 +1,10 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  Entity, PrimaryKey, Property,
+} from '@mikro-orm/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity()
-export class Product {
+export class Products {
   @PrimaryKey({ type: 'uuid' })
     id: string = uuidv4();
 

@@ -5,6 +5,7 @@ export interface IUser {
   name: string,
   email: string,
   password: string,
+  cart_id: string | null,
 }
 
 export type IUserModel = IUser & Document;

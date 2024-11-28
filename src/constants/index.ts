@@ -10,6 +10,7 @@ export const ERROR_MESSAGES = {
   404: {
     NOT_FOUND: 'Not Found',
     CART_NOT_FOUND: 'Cart was not found',
+    USER_NOT_FOUND: 'User was not found',
   },
   500: {
     SERVER_ERROR: 'Internal Server error',

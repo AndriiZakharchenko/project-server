@@ -1,27 +1,16 @@
 import 'reflect-metadata';
 import express, { Router } from 'express';
-// import { RequestContext } from '@mikro-orm/core';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
-// import pool from '../pg-pool.config';
 import config from '../mikro-orm.config';
 import { ERROR_MESSAGES } from './constants';
+import { validateUser } from './middlewares/user.middleware';
 import { ProductController } from './controllers/product.controller';
+import { CartController } from './controllers/cart.controller';
 
 // import { validateSchema } from './middlewares/validate.middleware';
-// import { validateUser } from './middlewares/user.middleware';
 // import { updateCartSchema } from './validations/product.validation';
-// import { CartController } from './controllers/cart.controller';
 // import { OrderController } from './controllers/order.controller';
-
-// pool
-//   .connect()
-//   .then(() => {
-//     console.log('Connected to PostgreSQL database');
-//   })
-//   .catch((err) => {
-//     console.error('Error connecting to PostgreSQL database', err);
-//   });
 
 const PORT = process.env.PORT || 8000;
 
@@ -41,15 +30,17 @@ async function startServer() {
   });
 
   // Product routes
-  router.get('/api/products', ProductController.getAllProducts);
-  // router.get('/api/products/:productId', ProductController.getProductById);
-  //
+  router.get('/api/products', validateUser, ProductController.getAllProducts);
+  router.get('/api/products/:productId', validateUser, ProductController.getProductById);
+
   // // Cart routes
-  // router.get('/api/profile/cart', validateUser, CartController.getCart);
+  router.get('/api/profile/cart', validateUser, CartController.getCart);
+  // eslint-disable-next-line max-len
   // router.put('/api/profile/cart', validateUser, validateSchema(updateCartSchema), CartController.updateCart);
+  // router.put('/api/profile/cart', validateUser, CartController.updateCart);
   // router.delete('/api/profile/cart', validateUser, CartController.deleteCart);
-  //
-  // // Order routes
+
+  // Order routes
   // router.post('/api/profile/cart/checkout', validateUser, OrderController.createOrder);
 
   app.use(router);
@@ -57,6 +48,10 @@ async function startServer() {
   // 404 Route handler
   app.all('*', (req, res) => {
     res.status(404).json({ message: ERROR_MESSAGES[404].NOT_FOUND });
+  });
+
+  app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
   });
 }
 
