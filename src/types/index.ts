@@ -1,14 +1,13 @@
-import { Document } from 'mongoose';
+import { Collection } from '@mikro-orm/core';
+import { CartItems } from '../entities';
+import { CART_ACTION } from '../constants';
 
 export interface IUser {
   id: string,
   name: string,
   email: string,
   password: string,
-  cart_id: string | null,
 }
-
-export type IUserModel = IUser & Document;
 
 export interface IProduct {
   id: string;
@@ -16,8 +15,6 @@ export interface IProduct {
   description: string;
   price: number;
 }
-
-export type IProductModel = IProduct & Document;
 
 export interface ICart {
   cart: {
@@ -29,8 +26,6 @@ export interface ICart {
   },
   total: number;
 }
-
-export type ICartModel = ICart & Document;
 
 export interface IOrder {
   id: string,
@@ -51,14 +46,27 @@ export interface IOrder {
   total: number;
 }
 
-export type IOrderModel = IOrder & Document;
-
-export interface ICartItem {
+export interface ICartProps {
   productId: string;
   count: number;
 }
 
+export interface ICartItem {
+  count: number;
+  product: IProduct;
+}
+
 export interface ICartResponse {
-  data: ICart;
-  error: { message: string } | null;
+  id: string;
+  items: Collection<CartItems>;
+  total: number;
+}
+
+export type CartActionType = typeof CART_ACTION[keyof typeof CART_ACTION];
+
+export interface ICartAction {
+  cartId: string;
+  productId: string;
+  count: number;
+  type: CartActionType;
 }

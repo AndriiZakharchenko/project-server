@@ -16,3 +16,9 @@ export const ERROR_MESSAGES = {
     SERVER_ERROR: 'Internal Server error',
   },
 };
+
+export const CART_ACTION = {
+  ADD: 'ADD',
+  UPDATE: 'UPDATE',
+  REMOVE: 'REMOVE',
+};

@@ -7,6 +7,9 @@ import { ERROR_MESSAGES } from './constants';
 import { validateUser } from './middlewares/user.middleware';
 import { ProductController } from './controllers/product.controller';
 import { CartController } from './controllers/cart.controller';
+import { OrderController } from './controllers/order.controller';
+import { validateSchema } from './middlewares/validate.middleware';
+import { updateCartSchema } from './validations/product.validation';
 
 const PORT = process.env.PORT || 8000;
 
@@ -31,13 +34,11 @@ async function startServer() {
 
   // // Cart routes
   router.get('/api/profile/cart', validateUser, CartController.getCart);
-  // eslint-disable-next-line max-len
-  // router.put('/api/profile/cart', validateUser, validateSchema(updateCartSchema), CartController.updateCart);
-  router.put('/api/profile/cart', validateUser, CartController.updateCart);
+  router.put('/api/profile/cart', validateUser, validateSchema(updateCartSchema), CartController.updateCart);
   router.delete('/api/profile/cart', validateUser, CartController.deleteCart);
 
   // Order routes
-  // router.post('/api/profile/cart/checkout', validateUser, OrderController.createOrder);
+  router.post('/api/profile/cart/checkout', validateUser, OrderController.createOrder);
 
   app.use(router);
 

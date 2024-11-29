@@ -19,7 +19,6 @@ export class Carts {
   @OneToOne(() => Users, { nullable: false })
     user!: Users;
 }
-//
 // {
 //   cart: {
 //     id: { type: String, required: true },
