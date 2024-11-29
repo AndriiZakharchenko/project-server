@@ -9,10 +9,6 @@ export class ProductRepository {
 
   static async getProductById(productId: string) {
     const em = RequestContext.getEntityManager();
-    // if (em === null) {
-    //
-    // }
-
     return em!.findOne(Products, { id: productId });
   }
 }

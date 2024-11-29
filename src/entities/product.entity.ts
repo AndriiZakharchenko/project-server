@@ -1,7 +1,8 @@
 import {
-  Entity, PrimaryKey, Property,
+  Entity, OneToMany, PrimaryKey, Property,
 } from '@mikro-orm/core';
 import { v4 as uuidv4 } from 'uuid';
+import { CartItems } from './cartItem.entity';
 
 @Entity()
 export class Products {
@@ -16,4 +17,7 @@ export class Products {
 
   @Property()
     price!: number;
+
+  @OneToMany(() => CartItems, (cartItem) => cartItem.product)
+    product!: CartItems;
 }

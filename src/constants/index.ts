@@ -8,7 +8,7 @@ export const ERROR_MESSAGES = {
     UNAUTHORIZED: 'Unauthorized',
   },
   404: {
-    NOT_FOUND: 'Not Found',
+    PRODUCT_NOT_FOUND: 'Product was not found',
     CART_NOT_FOUND: 'Cart was not found',
     USER_NOT_FOUND: 'User was not found',
   },

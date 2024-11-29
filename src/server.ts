@@ -8,10 +8,6 @@ import { validateUser } from './middlewares/user.middleware';
 import { ProductController } from './controllers/product.controller';
 import { CartController } from './controllers/cart.controller';
 
-// import { validateSchema } from './middlewares/validate.middleware';
-// import { updateCartSchema } from './validations/product.validation';
-// import { OrderController } from './controllers/order.controller';
-
 const PORT = process.env.PORT || 8000;
 
 async function startServer() {
@@ -37,8 +33,8 @@ async function startServer() {
   router.get('/api/profile/cart', validateUser, CartController.getCart);
   // eslint-disable-next-line max-len
   // router.put('/api/profile/cart', validateUser, validateSchema(updateCartSchema), CartController.updateCart);
-  // router.put('/api/profile/cart', validateUser, CartController.updateCart);
-  // router.delete('/api/profile/cart', validateUser, CartController.deleteCart);
+  router.put('/api/profile/cart', validateUser, CartController.updateCart);
+  router.delete('/api/profile/cart', validateUser, CartController.deleteCart);
 
   // Order routes
   // router.post('/api/profile/cart/checkout', validateUser, OrderController.createOrder);
@@ -47,7 +43,7 @@ async function startServer() {
 
   // 404 Route handler
   app.all('*', (req, res) => {
-    res.status(404).json({ message: ERROR_MESSAGES[404].NOT_FOUND });
+    res.status(404).json({ message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND });
   });
 
   app.listen(PORT, () => {

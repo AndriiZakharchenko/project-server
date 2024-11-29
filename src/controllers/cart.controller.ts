@@ -8,13 +8,13 @@ export class CartController {
     return res.status(getStatus(data.error)).json(data);
   }
 
-  // static async updateCart(req: Request, res: Response) {
-  //   const data = await CartService.updateCart(req.headers['x-user-id'] as string, req.body);
-  //       return res.status(getStatus(data.error)).json(data);
-  // }
+  static async updateCart(req: Request, res: Response) {
+    const data = await CartService.updateCart(req.headers['x-user-id'] as string, req.body);
+    return res.status(getStatus(data.error)).json(data);
+  }
 
-  // static async deleteCart(req: Request, res: Response) {
-  //   const data = await CartService.deleteCart(req.headers['x-user-id'] as string);
-  //   return res.status(getStatus(data.error)).json(data);
-  // }
+  static async deleteCart(req: Request, res: Response) {
+    const data = await CartService.deleteCart(req.headers['x-user-id'] as string);
+    return res.status(getStatus(data.error)).json(data);
+  }
 }

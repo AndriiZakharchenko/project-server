@@ -7,30 +7,19 @@ const seedDatabase = async () => {
     // Create the `users` table if it doesn't exist
     await pool.query(`
       CREATE TABLE IF NOT EXISTS users (
-         id UUID PRIMARY KEY,
-         name VARCHAR(255) NOT NULL,
-          email TEXT NOT NULL,
-          password VARCHAR(255) NOT NULL
---           cart_id UUID REFERENCES carts(id) ON DELETE SET NULL
-        );
+        id UUID PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email TEXT NOT NULL,
+        password VARCHAR(255) NOT NULL
+      );
     `);
 
     // Create the `carts` table if it doesn't exist
     await pool.query(`
-        CREATE TABLE IF NOT EXISTS carts (
-           id UUID PRIMARY KEY,
-           total INT NOT NULL,
-           user_id UUID REFERENCES users(id) ON DELETE CASCADE
-            );
-    `);
-
-    // Create the `cart_items` table if it doesn't exist
-    await pool.query(`
-      CREATE TABLE IF NOT EXISTS cart_items (
+      CREATE TABLE IF NOT EXISTS carts (
         id UUID PRIMARY KEY,
-        count INT NOT NULL
---         cart_id UUID REFERENCES carts(id) ON DELETE CASCADE,
---         product_id UUID REFERENCES products(id) ON DELETE CASCADE,
+        total INT NOT NULL,
+        user_id UUID REFERENCES users(id) ON DELETE CASCADE
       );
     `);
 
@@ -41,6 +30,16 @@ const seedDatabase = async () => {
         title VARCHAR(255) NOT NULL,
         description TEXT,
         price INT NOT NULL
+      );
+    `);
+
+    // Create the `cart_items` table if it doesn't exist
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS cart_items (
+        id UUID PRIMARY KEY,
+        count INT NOT NULL,
+        cart_id UUID REFERENCES carts(id) ON DELETE CASCADE,
+        product_id UUID REFERENCES products(id) ON DELETE CASCADE
       );
     `);
 
