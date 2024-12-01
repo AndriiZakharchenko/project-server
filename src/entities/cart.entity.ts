@@ -19,13 +19,3 @@ export class Carts {
   @OneToOne(() => Users, { nullable: false })
     user!: Users;
 }
-// {
-//   cart: {
-//     id: { type: String, required: true },
-//     items: [{
-//       product: { type: Schema.Types.ObjectId, ref: 'Product' },
-//       count: { type: Number, required: true },
-//     }],
-//   },
-//   total: { type: Number, default: 0 },
-// }

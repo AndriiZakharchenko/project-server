@@ -12,6 +12,7 @@ export class ProductService {
 
       return { data: products, error: null };
     } catch (error) {
+      console.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
@@ -29,6 +30,7 @@ export class ProductService {
         error: null,
       };
     } catch (error) {
+      console.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }

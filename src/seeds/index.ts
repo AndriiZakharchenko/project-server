@@ -8,7 +8,7 @@ const seedDatabase = async () => {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS users (
         id UUID PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
+        role VARCHAR(255) NOT NULL,
         email TEXT NOT NULL,
         password VARCHAR(255) NOT NULL
       );
@@ -46,11 +46,11 @@ const seedDatabase = async () => {
     // Insert users into the `users` table
     const userPromises = users.map((user) => pool.query(
       `
-      INSERT INTO users (id, name, email, password)
+      INSERT INTO users (id, role, email, password)
       VALUES ($1, $2, $3, $4)
       ON CONFLICT (id) DO NOTHING;
     `,
-      [user.id, user.name, user.email, user.password],
+      [user.id, user.role, user.email, user.password],
     ));
     await Promise.all(userPromises);
 

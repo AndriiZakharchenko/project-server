@@ -1,15 +1,22 @@
 import 'reflect-metadata';
+
 import express, { Router } from 'express';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
+import * as dotenv from 'dotenv';
 import config from '../mikro-orm.config';
-import { ERROR_MESSAGES } from './constants';
-import { validateUser } from './middlewares/user.middleware';
+
 import { ProductController } from './controllers/product.controller';
 import { CartController } from './controllers/cart.controller';
 import { OrderController } from './controllers/order.controller';
+import { UserController } from './controllers/user.controller';
+
+import { verifyToken } from './middlewares/user.middleware';
 import { validateSchema } from './middlewares/validate.middleware';
+import { ERROR_MESSAGES } from './constants';
 import { updateCartSchema } from './validations/product.validation';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 8000;
 
@@ -28,17 +35,24 @@ async function startServer() {
     RequestContext.create(orm.em, next);
   });
 
+  // User routes
+  router.post('/api/auth/login', UserController.loginUser);
+  router.post('/api/auth/register', UserController.registerUser);
+
+  // User middleware
+  app.use('/api', verifyToken);
+
   // Product routes
-  router.get('/api/products', validateUser, ProductController.getAllProducts);
-  router.get('/api/products/:productId', validateUser, ProductController.getProductById);
+  router.get('/api/products', ProductController.getAllProducts);
+  router.get('/api/products/:productId', ProductController.getProductById);
 
   // // Cart routes
-  router.get('/api/profile/cart', validateUser, CartController.getCart);
-  router.put('/api/profile/cart', validateUser, validateSchema(updateCartSchema), CartController.updateCart);
-  router.delete('/api/profile/cart', validateUser, CartController.deleteCart);
+  router.get('/api/profile/cart', CartController.getCart);
+  router.put('/api/profile/cart', validateSchema(updateCartSchema), CartController.updateCart);
+  router.delete('/api/profile/cart', CartController.deleteCart);
 
   // Order routes
-  router.post('/api/profile/cart/checkout', validateUser, OrderController.createOrder);
+  router.post('/api/profile/cart/checkout', OrderController.createOrder);
 
   app.use(router);
 

@@ -3,6 +3,7 @@ coverage/
 node_modules/
 .idea/
 .vscode/
+.env
 
 junit.xml
 cobertura-coverage.xml

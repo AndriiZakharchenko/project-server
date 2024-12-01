@@ -37,6 +37,7 @@ export class OrderService {
         error: null,
       };
     } catch (error) {
+      console.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }

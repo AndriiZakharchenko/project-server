@@ -10,14 +10,11 @@ export class Users {
     id: string = uuidv4();
 
   @Property()
-    name!: string;
+    role!: string;
 
   @Property()
     email!: string;
 
   @Property()
     password!: string;
-
-  @OneToOne(() => Carts)
-    cart!: Carts;
 }

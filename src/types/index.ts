@@ -3,8 +3,8 @@ import { CartItems } from '../entities';
 import { CART_ACTION } from '../constants';
 
 export interface IUser {
-  id: string,
-  name: string,
+  id?: string,
+  role: string,
   email: string,
   password: string,
 }
