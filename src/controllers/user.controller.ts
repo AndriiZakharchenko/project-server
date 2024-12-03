@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getStatus } from '../helpers/status.helper';
-import { UserService } from '../services/user.service';
+import { getStatus } from '../helpers';
+import { UserService } from '../services';
 
 export class UserController {
   static async registerUser(req: Request, res: Response) {

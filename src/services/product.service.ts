@@ -1,5 +1,6 @@
 import { ERROR_MESSAGES } from '../constants';
-import { ProductRepository } from '../repositories/product.repository';
+import { ProductRepository } from '../repositories';
+import { logger } from '../helpers';
 
 export class ProductService {
   static async getAllProducts() {
@@ -12,7 +13,7 @@ export class ProductService {
 
       return { data: products, error: null };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
@@ -30,7 +31,7 @@ export class ProductService {
         error: null,
       };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }

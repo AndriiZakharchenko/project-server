@@ -1,8 +1,5 @@
-import {
-  Entity, OneToOne, PrimaryKey, Property,
-} from '@mikro-orm/core';
+import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
 import { v4 as uuidv4 } from 'uuid';
-import { Carts } from './cart.entity';
 
 @Entity()
 export class Users {

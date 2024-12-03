@@ -6,8 +6,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "nodemon ./src/server.ts",
-    "start:dist": "npm run build && ./node_modules/.bin/pm2 start ./dist/src/server.js --name 6-express-layered-architecture",
+    "start": "NODE_ENV=development nodemon ./src/server.ts",
+    "start:prod": "NODE_ENV=production npm run build && ./node_modules/.bin/pm2 start ./dist/src/server.js --name 6-express-layered-architecture",
     "stop": "./node_modules/.bin/pm2 stop 6-express-layered-architecture",
     "build": "tsc",
     "seed": "ts-node ./src/seeds/index.ts"
@@ -35,7 +35,8 @@
     "mongoose": "^8.8.3",
     "pg": "^8.13.1",
     "reflect-metadata": "^0.2.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

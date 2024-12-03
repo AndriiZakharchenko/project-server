@@ -1,8 +1,6 @@
 import { RequestContext } from '@mikro-orm/core';
 import { CartItems, Carts } from '../entities';
-import {
-  ICart, ICartAction, ICartItem, ICartResponse,
-} from '../types';
+import { ICartAction, ICartItem, ICartResponse } from '../types';
 import { CART_ACTION } from '../constants';
 
 export class CartRepository {

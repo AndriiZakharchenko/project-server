@@ -1,6 +1,7 @@
 import pool from '../../pg-pool.config';
 import { products } from '../data/products';
 import { users } from '../data/users';
+import logger from '../helpers/logger.helper';
 
 const seedDatabase = async () => {
   try {
@@ -65,9 +66,9 @@ const seedDatabase = async () => {
     ));
     await Promise.all(productPromises);
 
-    console.log('База даних успішно заповнена!');
+    logger.info('База даних успішно заповнена!');
   } catch (error) {
-    console.error('Помилка під час заповнення бази даних:', error);
+    logger.error('Помилка під час заповнення бази даних:', error);
   } finally {
     await pool.end();
   }

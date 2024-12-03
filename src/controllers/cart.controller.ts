@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getStatus } from '../helpers/status.helper';
-import { CartService } from '../services/cart.service';
+import { getStatus } from '../helpers';
+import { CartService } from '../services';
 
 export class CartController {
   static async getCart(req: Request, res: Response) {

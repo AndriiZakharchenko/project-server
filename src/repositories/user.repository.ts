@@ -1,5 +1,5 @@
 import { RequestContext } from '@mikro-orm/core';
-import { Carts, Users } from '../entities';
+import { Users } from '../entities';
 import { IUser } from '../types';
 
 export class UserRepository {

@@ -1,8 +1,9 @@
 import bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
-import { ERROR_MESSAGES } from '../constants';
-import { UserRepository } from '../repositories/user.repository';
 import { IUser } from '../types';
+import { ERROR_MESSAGES } from '../constants';
+import { UserRepository } from '../repositories';
+import { logger } from '../helpers';
 
 export class UserService {
   static async registerUser({
@@ -27,7 +28,7 @@ export class UserService {
 
       return { data: null, error: { message: ERROR_MESSAGES[201].USER_CREATED } };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
@@ -61,7 +62,7 @@ export class UserService {
       // Return error if credentials are invalid
       return { data: null, error: { message: ERROR_MESSAGES[400].INVALID_CREDENTIALS } };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }

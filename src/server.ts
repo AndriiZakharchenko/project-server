@@ -5,16 +5,16 @@ import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
 import * as dotenv from 'dotenv';
 import config from '../mikro-orm.config';
-
-import { ProductController } from './controllers/product.controller';
-import { CartController } from './controllers/cart.controller';
-import { OrderController } from './controllers/order.controller';
-import { UserController } from './controllers/user.controller';
-
-import { verifyToken } from './middlewares/user.middleware';
-import { validateSchema } from './middlewares/validate.middleware';
-import { ERROR_MESSAGES } from './constants';
 import { updateCartSchema } from './validations/product.validation';
+import { ERROR_MESSAGES } from './constants';
+
+import {
+  ProductController, CartController, OrderController, UserController,
+} from './controllers';
+import {
+  verifyToken, validateSchema, loggerMiddleware, verifyRole,
+} from './middlewares';
+import { shutdown, logger, healthCheck } from './helpers';
 
 dotenv.config();
 
@@ -23,12 +23,16 @@ const PORT = process.env.PORT || 8000;
 async function startServer() {
   // Initialize MikroORM
   const orm = await MikroORM.init(config);
-  console.log('Connected to PostgreSQL database via MikroORM');
+  logger.info('Connected to PostgreSQL database via MikroORM');
 
   const app = express();
   const router = Router();
-
   app.use(express.json());
+
+  // Health check route
+  app.get('/api/health', healthCheck(orm));
+  // Log all requests
+  app.use(loggerMiddleware);
 
   // MikroORM RequestContext middleware
   app.use((req, res, next) => {
@@ -49,7 +53,7 @@ async function startServer() {
   // // Cart routes
   router.get('/api/profile/cart', CartController.getCart);
   router.put('/api/profile/cart', validateSchema(updateCartSchema), CartController.updateCart);
-  router.delete('/api/profile/cart', CartController.deleteCart);
+  router.delete('/api/profile/cart', verifyRole, CartController.deleteCart);
 
   // Order routes
   router.post('/api/profile/cart/checkout', OrderController.createOrder);
@@ -61,11 +65,15 @@ async function startServer() {
     res.status(404).json({ message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND });
   });
 
-  app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+  const server = app.listen(PORT, () => {
+    logger.info(`Server started on port ${PORT}`);
   });
+
+  // Graceful shutdown
+  process.on('SIGINT', () => shutdown(server, orm));
+  process.on('SIGTERM', () => shutdown(server, orm));
 }
 
-startServer().catch((err) => {
-  console.error('Error starting server:', err);
+startServer().catch((error) => {
+  logger.error('Error starting server:', error);
 });

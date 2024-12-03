@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getStatus } from '../helpers/status.helper';
-import { OrderService } from '../services/order.service';
+import { getStatus } from '../helpers';
+import { OrderService } from '../services';
 
 export class OrderController {
   static async createOrder(req: Request, res: Response) {

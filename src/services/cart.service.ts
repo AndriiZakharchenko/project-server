@@ -1,11 +1,9 @@
 import { CART_ACTION, ERROR_MESSAGES } from '../constants';
-import { CartRepository } from '../repositories/cart.repository';
 import {
   ICartProps, ICartResponse, IProduct, IUser,
 } from '../types';
-import { ProductRepository } from '../repositories/product.repository';
-import { normalizeCart } from '../helpers/dataNormalizer.helper';
-import { UserRepository } from '../repositories/user.repository';
+import { logger, normalizeCart } from '../helpers';
+import { ProductRepository, UserRepository, CartRepository } from '../repositories';
 
 export class CartService {
   static async getCart(userId: string) {
@@ -26,7 +24,7 @@ export class CartService {
 
       return { data: normalizeCart(data), error: null };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
@@ -68,22 +66,13 @@ export class CartService {
       const updatedCart = await CartRepository.getCart(userId) as ICartResponse;
       return { data: normalizeCart(updatedCart), error: null };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
 
   static async deleteCart(userId: string) {
     try {
-      const user = await UserRepository.getUserById(userId) as IUser;
-      if (!user || JSON.stringify(user) === '[]') {
-        return { data: null, error: { message: ERROR_MESSAGES[404].USER_NOT_FOUND } };
-      }
-
-      if (user.role !== 'admin') {
-        return { data: null, error: { message: ERROR_MESSAGES[403].FORBIDDEN } };
-      }
-
       const data = await CartRepository.deleteCart(userId);
       // Check if cart is deleted
       if (data === null) {
@@ -92,7 +81,7 @@ export class CartService {
 
       return { data: { success: true }, error: null };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }

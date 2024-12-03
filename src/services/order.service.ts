@@ -1,8 +1,7 @@
 import { ERROR_MESSAGES } from '../constants';
 import { ICartResponse } from '../types';
-import { CartService } from './cart.service';
-import { normalizeCart } from '../helpers/dataNormalizer.helper';
-import { CartRepository } from '../repositories/cart.repository';
+import { logger, normalizeCart } from '../helpers';
+import { CartRepository } from '../repositories';
 
 export class OrderService {
   static async createOrder(userId: string) {
@@ -37,7 +36,7 @@ export class OrderService {
         error: null,
       };
     } catch (error) {
-      console.error(error);
+      logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
