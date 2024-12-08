@@ -1,7 +1,7 @@
 import pool from '../../pg-pool.config';
 import { products } from '../data/products';
 import { users } from '../data/users';
-import logger from '../helpers/logger.helper';
+import { logger } from '../helpers';
 
 const seedDatabase = async () => {
   try {

@@ -56,7 +56,7 @@ export class UserService {
           },
         );
 
-        return { data: { token }, error: null };
+        return { data: { user, token }, error: null };
       }
 
       // Return error if credentials are invalid

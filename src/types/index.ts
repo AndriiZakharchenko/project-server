@@ -1,4 +1,5 @@
 import { Collection } from '@mikro-orm/core';
+import { Request } from 'express';
 import { CartItems } from '../entities';
 import { CART_ACTION } from '../constants';
 
@@ -7,6 +8,10 @@ export interface IUser {
   role: string,
   email: string,
   password: string,
+}
+
+export interface ICustomRequest extends Request {
+  user?: Omit<IUser, 'password'>;
 }
 
 export interface IProduct {

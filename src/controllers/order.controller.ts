@@ -4,7 +4,8 @@ import { OrderService } from '../services';
 
 export class OrderController {
   static async createOrder(req: Request, res: Response) {
-    const data = await OrderService.createOrder(req.headers['x-user-id'] as string);
+    // @ts-ignore
+    const data = await OrderService.createOrder(req.user.id);
     return res.status(getStatus(data.error)).json(data);
   }
 }
