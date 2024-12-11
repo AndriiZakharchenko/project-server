@@ -50,9 +50,9 @@ export class UserService {
       if (user && (await bcrypt.compare(password, user.password))) {
         const token = jwt.sign(
           { id: user.id, email, role: user.role },
-          process.env.ACCESS_TOKEN!,
+          process.env.PRIVATE_KEY!,
           {
-            expiresIn: '2h',
+            expiresIn: '15m',
           },
         );
 

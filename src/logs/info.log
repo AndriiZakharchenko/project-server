@@ -2,51 +2,55 @@
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
-{"level":"info","message":"Gracefully shutting down..."}
-{"level":"info","message":"HTTP server closed"}
-{"level":"info","message":"Database connection closed"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
-{"level":"info","message":"Healthy"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
+{"level":"error","message":"secret or public key must be provided","name":"JsonWebTokenError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
+{"expiredAt":"2024-12-11T16:04:18.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
+{"expiredAt":"2024-12-11T16:33:59.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2024-12-11T16:33:59.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2024-12-11T16:33:59.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2024-12-11T16:34:47.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
@@ -55,7 +59,6 @@
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
@@ -66,101 +69,6 @@
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Healthy"}
-{"expiredAt":"2024-12-01T23:08:04.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
-{"level":"info","message":"Gracefully shutting down..."}
-{"level":"info","message":"HTTP server closed"}
-{"level":"info","message":"Database connection closed"}
-{"code":"ECONNREFUSED","level":"error","message":"Error starting server:","stack":"AggregateError\n    at internalConnectMultiple (node:net:1117:18)\n    at afterConnectMultiple (node:net:1684:7)"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"База даних успішно заповнена!"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Gracefully shutting down..."}
-{"level":"info","message":"HTTP server closed"}
-{"level":"info","message":"Database connection closed"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"entity":{"id":"a1dc2a67-f8eb-45ad-b12f-06d6f59f23a9","items":[],"total":0},"level":"error","name":"ValidationError"}
-{"entity":{"id":"ed65c195-b7f7-4396-9977-0bb91dd5fd6a","items":[],"total":0},"level":"error","name":"ValidationError"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
-{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
-{"level":"info","message":"Server started on port 8000"}
+{"expiredAt":"2024-12-11T16:45:52.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}

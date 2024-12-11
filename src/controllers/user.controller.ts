@@ -13,14 +13,14 @@ export class UserController {
     const { data, error } = await UserService.loginUser(req.body);
     if (data) {
       req.user = data.user;
-
-      res.cookie('access_token', data.token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'strict',
-        maxAge: 2 * 60 * 60 * 1000,
-      });
+      res.setHeader('Authorization', `Bearer ${data.token}`);
     }
+
     return res.status(getStatus(error)).json({ data: data?.token || null, error });
+  }
+
+  static logoutUser(req: ICustomRequest, res: Response) {
+    res.clearCookie('access_token');
+    return res.status(200).json();
   }
 }

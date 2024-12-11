@@ -44,18 +44,19 @@ async function startServer() {
   // User routes
   router.post('/api/auth/login', UserController.loginUser);
   router.post('/api/auth/register', UserController.registerUser);
+  router.post('/api/auth/logout', UserController.logoutUser);
 
   // Product routes
   router.get('/api/products', authenticateRequest, ProductController.getAllProducts);
   router.get('/api/products/:productId', ProductController.getProductById);
 
   // // Cart routes
-  router.get('/api/profile/cart', authenticateRequest, CartController.getCart);
-  router.put('/api/profile/cart', authenticateRequest, validateSchema(updateCartSchema), CartController.updateCart);
+  router.get('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);
+  router.put('/api/profile/cart', authenticateRequest, authorizeRequest, validateSchema(updateCartSchema), CartController.updateCart);
   router.delete('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.deleteCart);
 
   // Order routes
-  router.post('/api/profile/cart/checkout', authenticateRequest, OrderController.createOrder);
+  router.post('/api/profile/cart/checkout', authenticateRequest, authorizeRequest, OrderController.createOrder);
 
   app.use(router);
 
