@@ -14,7 +14,7 @@ export class ProductService {
       return { data: products, error: null };
     } catch (error) {
       logger.error(error);
-      return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
+      return { data: [], error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
 
@@ -23,7 +23,7 @@ export class ProductService {
       const product = await ProductRepository.getProductById(productId);
 
       if (!product || JSON.stringify(product) === '[]') {
-        return { data: null, error: { message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND } };
+        return { data: [], error: { message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND } };
       }
 
       return {
@@ -32,7 +32,7 @@ export class ProductService {
       };
     } catch (error) {
       logger.error(error);
-      return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
+      return { data: [], error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
     }
   }
 }

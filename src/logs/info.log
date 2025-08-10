@@ -72,3 +72,170 @@
 {"expiredAt":"2024-12-11T16:45:52.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"code":"ECONNREFUSED","level":"error","message":"Error starting server:","stack":"AggregateError\n    at internalConnectMultiple (node:net:1122:18)\n    at afterConnectMultiple (node:net:1689:7)"}
+{"code":"ECONNREFUSED","level":"error","message":"Помилка під час заповнення бази даних:","stack":"AggregateError\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"ECONNREFUSED","level":"error","message":"Помилка під час заповнення бази даних:","stack":"AggregateError\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"level":"info","message":"База даних успішно заповнена!"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:00:48.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"expiredAt":"2025-03-20T21:27:17.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"expiredAt":"2025-03-20T21:27:17.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-03-20T21:27:17.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Error starting server: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Error starting server: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Error starting server: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Error starting server: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/Node/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Healthy"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Healthy"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1384","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1384","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1384","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"28000","file":"miscinit.c","length":100,"level":"error","line":"755","message":"Помилка під час заповнення бази даних: role \"node_gmp\" does not exist","name":"error","routine":"InitializeSessionUserId","severity":"FATAL","stack":"error: role \"node_gmp\" does not exist\n    at /Users/andriizakharchenko/Projects/Node/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/Node/src/seeds/index.ts:9:5)"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1384","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}

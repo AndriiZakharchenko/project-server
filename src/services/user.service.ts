@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import * as jwt from 'jsonwebtoken';
 import { IUser } from '../types';
-import { ERROR_MESSAGES } from '../constants';
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from '../constants';
 import { UserRepository } from '../repositories';
 import { logger } from '../helpers';
 
@@ -11,7 +11,7 @@ export class UserService {
   }: IUser) {
     try {
       // Check if all required fields are present
-      if (!(role && email && password)) {
+      if (!(email && password)) {
         return { data: null, error: { message: ERROR_MESSAGES[400].INVALID_DATA } };
       }
 
@@ -26,7 +26,7 @@ export class UserService {
         role, email, password: encryptedPassword,
       });
 
-      return { data: null, error: { message: ERROR_MESSAGES[201].USER_CREATED } };
+      return { data: SUCCESS_MESSAGES[201].USER_CREATED, error: null };
     } catch (error) {
       logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };

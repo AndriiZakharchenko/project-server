@@ -5,19 +5,12 @@ import { logger } from '../helpers';
 import { ICustomRequest, IUser } from '../types';
 
 export async function authenticateRequest(req: ICustomRequest, res: Response, next: NextFunction) {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) {
+  const token = req.cookies?.token;
+
+  if (!token) {
     return res.status(401).json({
       data: null,
       error: { message: ERROR_MESSAGES[401].TOKEN_REQUIRED },
-    });
-  }
-
-  const [tokenType, token] = authHeader.split(' ');
-  if (tokenType !== 'Bearer') {
-    return res.status(403).json({
-      data: null,
-      error: { message: ERROR_MESSAGES[403].INVALID_TOKEN },
     });
   }
 
@@ -31,11 +24,11 @@ export async function authenticateRequest(req: ICustomRequest, res: Response, ne
       { expiresIn: '7d' },
     );
 
-    res.cookie('access_token', newToken, {
+    res.cookie('token', newToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 7 * 60 * 60 * 1000,
+      maxAge: 10 * 1000,
     });
   } catch (error) {
     logger.error(error);

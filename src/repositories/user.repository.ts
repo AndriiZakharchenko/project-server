@@ -13,7 +13,7 @@ export class UserRepository {
     return em!.findOne(Users, { email });
   }
 
-  static async registerUser({ role, email, password }: IUser) {
+  static async registerUser({ role = 'viewer', email, password }: IUser) {
     const em = RequestContext.getEntityManager();
     const user = em!.create(Users, {
       role,

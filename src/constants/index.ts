@@ -1,7 +1,10 @@
-export const ERROR_MESSAGES = {
+export const SUCCESS_MESSAGES = {
   201: {
     USER_CREATED: 'User successfully registered',
   },
+};
+
+export const ERROR_MESSAGES = {
   400: {
     BAD_REQUEST: 'Bad request',
     INVALID_PRODUCT: 'Products are not valid',

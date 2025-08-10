@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import express, { Router } from 'express';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
 import * as dotenv from 'dotenv';
@@ -27,6 +28,13 @@ async function startServer() {
   logger.info('Connected to PostgreSQL database via MikroORM');
 
   const app = express();
+  // Дозволяє CORS для всіх доменів (НЕБЕЗПЕЧНО у продакшені)
+  app.use(
+    cors({
+      origin: 'http://localhost:3000', // ✅ Дозволяємо фронтенду отримувати cookies
+      credentials: true, // ✅ Дозволяємо відправляти та отримувати cookies
+    }),
+  );
   app.use(cookieParser());
   app.use(express.json());
   const router = Router();
@@ -47,8 +55,8 @@ async function startServer() {
   router.post('/api/auth/logout', UserController.logoutUser);
 
   // Product routes
-  router.get('/api/products', authenticateRequest, ProductController.getAllProducts);
-  router.get('/api/products/:productId', ProductController.getProductById);
+  router.get('/api/products', ProductController.getAllProducts);
+  router.get('/api/products/:productId', authenticateRequest, ProductController.getProductById);
 
   // // Cart routes
   router.get('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);

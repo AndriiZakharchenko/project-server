@@ -11,16 +11,23 @@ export class UserController {
 
   static async loginUser(req: ICustomRequest, res: Response) {
     const { data, error } = await UserService.loginUser(req.body);
+
     if (data) {
       req.user = data.user;
-      res.setHeader('Authorization', `Bearer ${data.token}`);
+
+      res.cookie('token', data.token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict',
+        path: '/',
+      });
     }
 
     return res.status(getStatus(error)).json({ data: data?.token || null, error });
   }
 
   static logoutUser(req: ICustomRequest, res: Response) {
-    res.clearCookie('access_token');
+    res.clearCookie('token');
     return res.status(200).json();
   }
 }
