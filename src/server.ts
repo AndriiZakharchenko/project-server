@@ -3,6 +3,7 @@ import 'reflect-metadata';
 import express, { Router } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import path from 'path';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
 import * as dotenv from 'dotenv';
@@ -28,15 +29,16 @@ async function startServer() {
   logger.info('Connected to PostgreSQL database via MikroORM');
 
   const app = express();
-  // Дозволяє CORS для всіх доменів (НЕБЕЗПЕЧНО у продакшені)
+  // Allow CORS for all domains (UNSAFE in production)
   app.use(
     cors({
-      origin: 'http://localhost:3000', // ✅ Дозволяємо фронтенду отримувати cookies
-      credentials: true, // ✅ Дозволяємо відправляти та отримувати cookies
+      origin: 'http://localhost:3000', // ✅ Allow frontend to receive cookies
+      credentials: true, // ✅ Allow sending and receiving cookies
     }),
   );
   app.use(cookieParser());
   app.use(express.json());
+  app.use(express.static(path.resolve(__dirname, 'static')));
   const router = Router();
 
   // Health check route
@@ -70,7 +72,11 @@ async function startServer() {
 
   // 404 Route handler
   app.all('*', (req, res) => {
-    res.status(404).json({ message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND });
+    res.status(404).json({
+      message: ERROR_MESSAGES[404].ROUTE_NOT_FOUND,
+      path: req.path,
+      method: req.method,
+    });
   });
 
   const server = app.listen(PORT, () => {

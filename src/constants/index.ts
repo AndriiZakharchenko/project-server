@@ -24,6 +24,7 @@ export const ERROR_MESSAGES = {
     PRODUCT_NOT_FOUND: 'Product was not found',
     CART_NOT_FOUND: 'Cart was not found',
     USER_NOT_FOUND: 'User was not found',
+    ROUTE_NOT_FOUND: 'Route not found',
   },
   409: {
     USER_FOUND: 'User already exist. Please login',
