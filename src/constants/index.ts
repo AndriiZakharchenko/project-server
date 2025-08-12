@@ -1,36 +1,36 @@
 export const SUCCESS_MESSAGES = {
   201: {
-    USER_CREATED: 'User successfully registered',
+    USER_CREATED: 'User registered successfully.',
   },
 };
 
 export const ERROR_MESSAGES = {
   400: {
-    BAD_REQUEST: 'Bad request',
-    INVALID_PRODUCT: 'Products are not valid',
-    EMPTY_CART: 'Cart is empty',
-    INVALID_DATA: 'All input is required',
-    INVALID_CREDENTIALS: 'Invalid Credentials',
+    BAD_REQUEST: 'Invalid request.',
+    INVALID_PRODUCT: 'Invalid product(s) specified.',
+    EMPTY_CART: 'The cart is empty.',
+    INVALID_DATA: 'Required fields are missing or invalid.',
+    INVALID_CREDENTIALS: 'Incorrect email or password.',
   },
   401: {
-    UNAUTHORIZED: 'Unauthorized',
-    TOKEN_REQUIRED: 'Token is required',
+    UNAUTHORIZED: 'Authentication required.',
+    TOKEN_REQUIRED: 'Access token is missing.',
   },
   403: {
-    FORBIDDEN: 'Forbidden',
-    INVALID_TOKEN: 'Invalid Token',
+    FORBIDDEN: 'Access denied.',
+    INVALID_TOKEN: 'Invalid or expired access token.',
   },
   404: {
-    PRODUCT_NOT_FOUND: 'Product was not found',
-    CART_NOT_FOUND: 'Cart was not found',
-    USER_NOT_FOUND: 'User was not found',
-    ROUTE_NOT_FOUND: 'Route not found',
+    PRODUCT_NOT_FOUND: 'Product not found.',
+    CART_NOT_FOUND: 'Cart not found.',
+    USER_NOT_FOUND: 'User not found.',
+    ROUTE_NOT_FOUND: 'Endpoint not found.',
   },
   409: {
-    USER_FOUND: 'User already exist. Please login',
+    USER_FOUND: 'User already exists. Please log in.',
   },
   500: {
-    SERVER_ERROR: 'Internal Server error',
+    SERVER_ERROR: 'An unexpected server error occurred.',
   },
 };
 

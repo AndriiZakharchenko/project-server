@@ -19,6 +19,7 @@ export interface IProduct {
   title: string;
   description: string;
   price: number;
+  imageUrl: string;
 }
 
 export interface ICart {

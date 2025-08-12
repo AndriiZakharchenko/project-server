@@ -18,6 +18,9 @@ export class Products {
   @Property()
     price!: number;
 
+  @Property()
+    imageUrl!: string;
+
   @OneToMany(() => CartItems, (cartItem) => cartItem.product)
     product!: CartItems;
 }

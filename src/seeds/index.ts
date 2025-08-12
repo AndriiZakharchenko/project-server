@@ -30,6 +30,7 @@ const seedDatabase = async () => {
         id UUID PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         description TEXT,
+        imageUrl TEXT,
         price INT NOT NULL
       );
     `);
@@ -58,11 +59,11 @@ const seedDatabase = async () => {
     // Insert products into the `products` table
     const productPromises = products.map((product) => pool.query(
       `
-        INSERT INTO products (id, title, description, price)
-        VALUES ($1, $2, $3, $4)
+        INSERT INTO products (id, title, description, price, imageUrl)
+        VALUES ($1, $2, $3, $4, $5)
         ON CONFLICT (id) DO NOTHING;
       `,
-      [product.id, product.title, product.description, product.price],
+      [product.id, product.title, product.description, product.price, product.imageUrl],
     ));
     await Promise.all(productPromises);
 
