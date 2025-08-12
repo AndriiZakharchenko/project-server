@@ -1,0 +1,3 @@
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"База даних успішно заповнена!"}
