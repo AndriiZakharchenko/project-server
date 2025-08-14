@@ -12,7 +12,8 @@ export class ProductRepository {
       title, description, image_url, price,
     });
 
-    return em!.persistAndFlush(product);
+    await em!.persistAndFlush(product);
+    return product;
   }
 
   static async getAllProducts() {

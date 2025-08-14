@@ -58,3 +58,9 @@
 [Thu, 14 Aug 2025 11:49:46] INFO GET /api/products - 7ms
 [Thu, 14 Aug 2025 12:42:25] INFO POST /api/products - 3ms
 [Thu, 14 Aug 2025 12:42:37] INFO POST /api/products - 12ms
+[Thu, 14 Aug 2025 15:27:59] INFO POST /api/products - 24ms
+[Thu, 14 Aug 2025 15:36:35] INFO POST /api/products - 36ms
+[Thu, 14 Aug 2025 15:38:15] INFO POST /api/products - 32ms
+[Thu, 14 Aug 2025 15:49:56] INFO POST /api/products - 13ms
+[Thu, 14 Aug 2025 15:51:43] INFO POST /api/auth/login - 92ms
+[Thu, 14 Aug 2025 15:51:57] INFO POST /api/products - 1ms

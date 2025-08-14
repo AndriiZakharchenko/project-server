@@ -1,4 +1,5 @@
 import {
+  Collection,
   Entity, OneToMany, PrimaryKey, Property,
 } from '@mikro-orm/core';
 import { v4 as uuidv4 } from 'uuid';
@@ -21,6 +22,6 @@ export class Products {
   @Property()
     image_url!: string;
 
-  @OneToMany(() => CartItems, (cartItem) => cartItem.product)
-    product!: CartItems;
+  @OneToMany(() => CartItems, (cartItem) => cartItem.product, { hidden: true })
+    cartItem = new Collection<CartItems>(this);
 }
