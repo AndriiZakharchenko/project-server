@@ -1,13 +1,13 @@
 import {
   Entity, OneToMany, PrimaryKey, Property,
 } from '@mikro-orm/core';
-import { v4 as uuidv4 } from 'uuid';
+import uuid from 'uuid';
 import { CartItems } from './cartItem.entity';
 
 @Entity()
 export class Products {
   @PrimaryKey({ type: 'uuid' })
-    id: string = uuidv4();
+    id: string = uuid.v4();
 
   @Property()
     title!: string;

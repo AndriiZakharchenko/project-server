@@ -5,6 +5,7 @@ import { ACCESS_MAP } from './accessRoutes';
 
 export async function authorizeRequest(req: ICustomRequest, res: Response, next: NextFunction) {
   const path = req.path as keyof typeof ACCESS_MAP;
+  console.log('test', req.user);
 
   if (!(ACCESS_MAP[path].includes(req.user!.role))) {
     return res.status(403).json({

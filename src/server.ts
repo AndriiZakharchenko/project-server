@@ -3,6 +3,7 @@ import 'reflect-metadata';
 import express, { Router } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import fileUpload from 'express-fileupload';
 import path from 'path';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
@@ -36,6 +37,9 @@ async function startServer() {
   }));
   app.use(cookieParser());
   app.use(express.json());
+  app.use(fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+  }));
   app.use(express.static(path.resolve(__dirname, 'static')));
   const router = Router();
 
@@ -55,8 +59,9 @@ async function startServer() {
   router.post('/api/auth/logout', UserController.logoutUser);
 
   // Product routes
-  router.get('/api/products', ProductController.getAllProducts);
-  router.get('/api/products/:productId', authenticateRequest, ProductController.getProductById);
+  router.post('/api/products', ProductController.addProduct);
+  router.get('/api/products', authenticateRequest, authorizeRequest, ProductController.getAllProducts);
+  router.get('/api/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
 
   // // Cart routes
   router.get('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);

@@ -28,7 +28,7 @@ export async function authenticateRequest(req: ICustomRequest, res: Response, ne
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 10 * 1000,
+      maxAge: 15 * 60 * 1000,
     });
   } catch (error) {
     logger.error(error);
