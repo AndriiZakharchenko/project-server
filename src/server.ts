@@ -37,9 +37,7 @@ async function startServer() {
   }));
   app.use(cookieParser());
   app.use(express.json());
-  app.use(fileUpload({
-    limits: { fileSize: 50 * 1024 * 1024 },
-  }));
+  app.use(fileUpload({ limits: { fileSize: 50 * 1024 * 1024 } })); // 50MB file upload limit
   app.use(express.static(path.resolve(__dirname, 'static')));
   const router = Router();
 

@@ -1,18 +1,17 @@
-import { Request } from 'express';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
 import { ERROR_MESSAGES } from '../constants';
 import { ProductRepository } from '../repositories';
 import { logger } from '../helpers';
-import { IProduct } from '../types';
+import { IProductRaw } from '../types';
 
 export class ProductService {
   static async addProduct({
     title, description, image_url, price,
-  }: IProduct) {
+  }: IProductRaw) {
     try {
-      const fileName = `${uuid.v4()}.jpg`;
-      image_url.mv(path.resolve(__dirname, '..', 'static', fileName));
+      const fileName = `${uuidv4()}.jpg`;
+      await image_url.mv(path.resolve(__dirname, '..', 'static', fileName));
 
       const product = await ProductRepository.addProduct({
         title, description, price, image_url: fileName,

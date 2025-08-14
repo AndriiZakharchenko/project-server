@@ -11,6 +11,8 @@ export class ProductRepository {
     const product = em!.create(Products, {
       title, description, image_url, price,
     });
+
+    return em!.persistAndFlush(product);
   }
 
   static async getAllProducts() {

@@ -1,5 +1,6 @@
 import { Collection } from '@mikro-orm/core';
 import { Request } from 'express';
+import { UploadedFile } from 'express-fileupload';
 import { CartItems } from '../entities';
 import { CART_ACTION } from '../constants';
 
@@ -15,11 +16,18 @@ export interface ICustomRequest extends Request {
 }
 
 export interface IProduct {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   price: number;
   image_url: string;
+}
+
+export interface IProductRaw {
+  title: string;
+  description: string;
+  price: number;
+  image_url: UploadedFile;
 }
 
 export interface ICart {
