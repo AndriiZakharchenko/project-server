@@ -30,4 +30,8 @@ export class UserController {
     res.clearCookie('token');
     return res.status(200).json();
   }
+
+  static async check(req: ICustomRequest, res: Response) {
+    return res.status(200).json({ data: req.user || null, error: null });
+  }
 }

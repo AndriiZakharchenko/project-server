@@ -59,6 +59,7 @@ async function startServer() {
   router.post('/api/auth/login', UserController.loginUser);
   router.post('/api/auth/register', UserController.registerUser);
   router.post('/api/auth/logout', UserController.logoutUser);
+  router.get('/api/auth/check', authenticateRequest, UserController.check);
 
   // Product routes
   router.post('/api/products', ProductController.addProduct);
