@@ -16,9 +16,13 @@ export class ProductRepository {
     return product;
   }
 
-  static async getAllProducts() {
+  static async getAllProducts({ offset = 0, limit = 6 }: { offset?: number; limit?: number }) {
     const em = RequestContext.getEntityManager();
-    return em!.find(Products, {});
+
+    return em!.findAndCount(Products, {}, {
+      limit,
+      offset,
+    });
   }
 
   static async getProductById(productId: string) {

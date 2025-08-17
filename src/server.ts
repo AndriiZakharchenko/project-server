@@ -62,7 +62,7 @@ async function startServer() {
   router.get('/api/auth/check', authenticateRequest, UserController.check);
 
   // Product routes
-  router.get('/api/products', authenticateRequest, authorizeRequest, ProductController.getAllProducts);
+  router.get('/api/products', ProductController.getAllProducts);
   router.get('/api/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
   router.post('/api/products', authenticateRequest, authorizeRequest, ProductController.addProduct);
 

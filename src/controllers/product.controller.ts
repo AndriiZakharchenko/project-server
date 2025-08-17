@@ -19,7 +19,10 @@ export class ProductController {
   }
 
   static async getAllProducts(req: Request, res: Response) {
-    const data = await ProductService.getAllProducts();
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 6;
+
+    const data = await ProductService.getAllProducts({ page, limit });
     return res.status(getStatus(data.error)).json(data);
   }
 

@@ -324,3 +324,7 @@
 [Sun, 17 Aug 2025 14:45:22] INFO GET /api/products - 13ms
 [Sun, 17 Aug 2025 14:45:22] INFO GET /api/products - 8ms
 [Sun, 17 Aug 2025 14:45:39] INFO POST /api/products - 4ms
+[Sun, 17 Aug 2025 17:22:08] INFO GET /api/products?page=1&limit=2 - 6ms
+[Sun, 17 Aug 2025 17:22:22] INFO GET /api/products?page=1&limit=2 - 18ms
+[Sun, 17 Aug 2025 17:22:38] INFO GET /api/products?page=2&limit=2 - 8ms
+[Sun, 17 Aug 2025 17:24:58] INFO GET /api/products?page=2&limit=2 - 14ms

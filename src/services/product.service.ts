@@ -24,15 +24,30 @@ export class ProductService {
     }
   }
 
-  static async getAllProducts() {
+  static async getAllProducts({ page, limit }: { page: number; limit: number }) {
     try {
-      const products = await ProductRepository.getAllProducts();
+      const offset = page * limit - limit;
+      const [products, total] = await ProductRepository.getAllProducts({ offset, limit });
 
       if (!products || JSON.stringify(products) === '[]') {
-        return { data: null, error: { message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND } };
+        return {
+          data: {
+            products: [],
+            total: 0,
+            page,
+            limit,
+          },
+          error: { message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND },
+        };
       }
 
-      return { data: products, error: null };
+      return {
+        data: {
+          products,
+          total,
+        },
+        error: null,
+      };
     } catch (error) {
       logger.error(error);
       return { data: [], error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
