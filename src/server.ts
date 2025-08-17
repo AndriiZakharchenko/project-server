@@ -62,9 +62,9 @@ async function startServer() {
   router.get('/api/auth/check', authenticateRequest, UserController.check);
 
   // Product routes
-  router.post('/api/products', ProductController.addProduct);
   router.get('/api/products', authenticateRequest, authorizeRequest, ProductController.getAllProducts);
   router.get('/api/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
+  router.post('/api/products', authenticateRequest, authorizeRequest, ProductController.addProduct);
 
   // // Cart routes
   router.get('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);
