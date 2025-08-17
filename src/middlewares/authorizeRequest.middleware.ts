@@ -10,14 +10,14 @@ export async function authorizeRequest(req: ICustomRequest, res: Response, next:
   if (!ACCESS_MAP[path]) {
     return res.status(404).json({
       data: null,
-      error: { message: 'Route not found' },
+      error: { message: ERROR_MESSAGES[404].ROUTE_NOT_FOUND },
     });
   }
 
   if (!ACCESS_MAP[path][method]) {
     return res.status(405).json({
       data: null,
-      error: { message: 'Method not allowed' },
+      error: { message: ERROR_MESSAGES[405].METHOD_NOT_ALLOWED },
     });
   }
 
