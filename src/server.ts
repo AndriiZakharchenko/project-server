@@ -13,7 +13,7 @@ import { updateCartSchema } from './validations/product.validation';
 import { ERROR_MESSAGES } from './constants';
 
 import {
-  ProductController, CartController, OrderController, UserController,
+  ProductController, CartController, OrderController, UserController, TrackController,
 } from './controllers';
 import {
   authenticateRequest, validateSchema, loggerMiddleware, authorizeRequest,
@@ -65,6 +65,10 @@ async function startServer() {
   router.get('/api/products', ProductController.getAllProducts);
   router.get('/api/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
   router.post('/api/products', authenticateRequest, authorizeRequest, ProductController.addProduct);
+
+  // Track routes
+  router.get('/api/tracks', TrackController.getTracks);
+  router.post('/api/tracks', authenticateRequest, authorizeRequest, TrackController.addTrack);
 
   // // Cart routes
   router.get('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);

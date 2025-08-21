@@ -1,6 +1,7 @@
 import pool from '../../pg-pool.config';
 import { products } from '../data/products';
 import { users } from '../data/users';
+import { tracks } from '../data/tracks';
 import { logger } from '../helpers';
 
 const seedDatabase = async () => {
@@ -45,6 +46,20 @@ const seedDatabase = async () => {
       );
     `);
 
+    // Create the `tracks` table if it doesn't exist
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS tracks (
+        id UUID PRIMARY KEY,
+        artist VARCHAR(255) NOT NULL,
+        title VARCHAR(255) NOT NULL,
+        album VARCHAR(255),
+        year INT,
+        track_url TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+
     // Insert users into the `users` table
     const userPromises = users.map((user) => pool.query(
       `
@@ -66,6 +81,17 @@ const seedDatabase = async () => {
       [product.id, product.title, product.description, product.price, product.image_url],
     ));
     await Promise.all(productPromises);
+
+    // Insert tracks into the `tracks` table
+    const trackPromises = tracks.map((track) => pool.query(
+      `
+        INSERT INTO tracks (id, artist, title, album, year, track_url)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        ON CONFLICT (id) DO NOTHING;
+      `,
+      [track.id, track.artist, track.title, track.album, track.year, track.track_url],
+    ));
+    await Promise.all(trackPromises);
 
     logger.info('База даних успішно заповнена!');
   } catch (error) {

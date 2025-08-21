@@ -30,6 +30,23 @@ export interface IProductRaw {
   image_url: UploadedFile;
 }
 
+export interface ITrack {
+  id?: string;
+  artist: string;
+  title: string;
+  album: string;
+  year: number;
+  track_url: string;
+}
+
+export interface ITrackRaw {
+  artist: string;
+  title: string;
+  album: string;
+  year: number;
+  track_url: UploadedFile;
+}
+
 export interface ICart {
   cart: {
     id: string;

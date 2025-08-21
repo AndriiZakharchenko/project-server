@@ -11,6 +11,10 @@ export const ACCESS_MAP: Record<string, RouteAccess> = {
     PUT: ['admin'],
     DELETE: ['admin'],
   },
+  '/api/tracks': {
+    GET: ['admin', 'viewer'],
+    POST: ['admin'],
+  },
   '/api/profile/cart': {
     GET: ['admin', 'viewer'],
     PUT: ['admin', 'viewer'],
