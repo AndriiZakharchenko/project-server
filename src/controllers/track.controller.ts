@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { UploadedFile } from 'express-fileupload';
-import { TrackService } from '../services';
 import { getStatus } from '../helpers';
+import { TrackService } from '../services';
 
 export class TrackController {
   static async addTrack(req: Request, res: Response) {
@@ -14,7 +14,7 @@ export class TrackController {
       artist,
       title,
       album,
-      year,
+      year: Number(year),
       track_url: file,
     });
 
