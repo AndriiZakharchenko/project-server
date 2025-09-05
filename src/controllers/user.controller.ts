@@ -20,6 +20,7 @@ export class UserController {
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
         path: '/',
+        maxAge: 20 * 1000,
       });
     }
 

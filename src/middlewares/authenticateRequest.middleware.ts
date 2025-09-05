@@ -21,17 +21,25 @@ export async function authenticateRequest(req: ICustomRequest, res: Response, ne
     const newToken = jwt.sign(
       { id: decoded.id, email: decoded.email, role: decoded.role },
       process.env.PRIVATE_KEY!,
-      { expiresIn: '7d' },
+      { expiresIn: '20s' },
     );
 
     res.cookie('token', newToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 15 * 60 * 1000,
+      // maxAge: 15 * 60 * 1000,
+      maxAge: 20 * 1000,
     });
   } catch (error) {
     logger.error(error);
+
+    res.clearCookie('token', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      path: '/',
+    });
 
     return res.status(403).json({
       data: null,

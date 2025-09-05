@@ -26,3 +26,4 @@ export class TrackController {
     return res.status(getStatus(data.error)).json(data);
   }
 }
+
