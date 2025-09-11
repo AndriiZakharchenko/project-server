@@ -1,13 +1,20 @@
 import { defineConfig } from '@mikro-orm/postgresql';
-import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
 import * as dotenv from 'dotenv';
+
+import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
+import { ReflectMetadataProvider } from '@mikro-orm/core';
 
 dotenv.config();
 
+const isProd = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
-  entities: ['./dist/src/entities/**/*.entity.js'],
-  entitiesTs: ['./src/entities/**/*.entity.ts'],
-  metadataProvider: TsMorphMetadataProvider,
+  entities: isProd
+    ? ['./dist/src/entities/**/*.entity.js']
+    : ['./src/entities/**/*.entity.ts'],
+  ...(isProd ? {} : { entitiesTs: ['./src/entities/**/*.entity.ts'] }),
+  metadataProvider: isProd ? ReflectMetadataProvider : TsMorphMetadataProvider,
+
   clientUrl: process.env.DATABASE_URL,
   driverOptions: { connection: { ssl: { rejectUnauthorized: false } } },
   migrations: { path: './src/migrations', tableName: 'migrations', transactional: true },
