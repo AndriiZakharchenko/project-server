@@ -2,7 +2,7 @@
   "name": "6-express-layered-architecture",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "author": "",
   "license": "ISC",
   "scripts": {
