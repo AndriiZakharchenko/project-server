@@ -32,7 +32,8 @@ async function startServer() {
   const app = express();
   // Allow CORS for all domains (UNSAFE in production)
   app.use(cors({
-    origin: 'http://localhost:3000', // Allow frontend to receive cookies
+    origin: process.env.NODE_ENV === 'production'
+      ? process.env.CLIENT_URL : 'http://localhost:3000', // Allow frontend to receive cookies
     credentials: true, // Allow sending and receiving cookies
   }));
   app.use(cookieParser());

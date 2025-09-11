@@ -272,3 +272,92 @@
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Healthy"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"code":"ERR_INVALID_URL","input":"undefined","level":"error","message":"Error starting server: Invalid URL","stack":"TypeError: Invalid URL\n    at new URL (node:internal/url:816:29)\n    at startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:31:15)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"code":"ERR_INVALID_URL","input":"undefined","level":"error","message":"Error starting server: Invalid URL","stack":"TypeError: Invalid URL\n    at new URL (node:internal/url:816:29)\n    at startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:31:15)\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Healthy"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"code":"ENOTFOUND","errno":-3008,"hostname":"postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","level":"error","message":"Error starting server: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z","stack":"Error: getaddrinfo ENOTFOUND postgresql://app_db_wp3z_user:0ScI3S5k3cCOzc5vJe0uOEqNYpxyAVuW@dpg-d319c0ogjchc73arcj1g-a.frankfurt-postgres.render.com/app_db_wp3z\n    at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)","syscall":"getaddrinfo"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"28000","length":37,"level":"error","message":"Помилка під час заповнення бази даних: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:10:5)"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1449","name":"TableNotFoundException","position":"33","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"28000","length":37,"level":"error","message":"Помилка під час заповнення бази даних: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:10:5)"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1449","name":"TableNotFoundException","position":"33","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"28000","length":37,"level":"error","message":"Error starting server: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"code":"28000","length":37,"level":"error","message":"Error starting server: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"code":"28000","length":37,"level":"error","message":"Error starting server: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"code":"28000","length":37,"level":"error","message":"Error starting server: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at Parser.parseErrorMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:368:69)\n    at Parser.handlePacket (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:187:21)\n    at Parser.parse (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/parser.ts:102:30)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg-protocol/src/index.ts:7:48)\n    at Socket.emit (node:events:519:28)\n    at Socket.emit (node:domain:488:12)\n    at addChunk (node:internal/streams/readable:561:12)\n    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)\n    at Socket.Readable.push (node:internal/streams/readable:392:5)\n    at TCP.onStreamRead (node:internal/stream_base_commons:189:23)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"28000","length":37,"level":"error","message":"Помилка під час заповнення бази даних: SSL/TLS required","name":"error","severity":"FATAL","stack":"error: SSL/TLS required\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:10:5)"}
+{"code":"42P01","file":"parse_relation.c","length":107,"level":"error","line":"1449","name":"TableNotFoundException","position":"33","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"База даних успішно заповнена!"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}

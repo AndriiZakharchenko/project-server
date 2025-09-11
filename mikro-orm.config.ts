@@ -1,18 +1,18 @@
 import { defineConfig } from '@mikro-orm/postgresql';
 import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export default defineConfig({
-  dbName: 'node_gmp',
+  dbName: process.env.DB_NAME || 'node_gmp',
   entities: ['./dist/entities/**/*.entity.js'],
   entitiesTs: ['./src/entities/**/*.entity.ts'],
   metadataProvider: TsMorphMetadataProvider,
-  host: 'localhost',
-  port: 5432,
-  user: 'node_gmp',
-  password: 'password123',
-  migrations: {
-    path: './src/migrations',
-    tableName: 'migrations',
-    transactional: true,
-  },
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT) || 5432,
+  user: process.env.DB_USER || 'node_gmp',
+  password: process.env.DB_PASSWORD || 'password123',
+  driverOptions: { connection: { ssl: { rejectUnauthorized: false } } },
+  migrations: { path: './src/migrations', tableName: 'migrations', transactional: true },
 });
