@@ -363,3 +363,17 @@
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"error","message":"Error starting server: No entities were discovered","name":"MetadataError","stack":"MetadataError: No entities were discovered\n    at MetadataError.noEntityDiscovered (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:173:16)\n    at MetadataValidator.validateDiscovered (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:54:42)\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:143:32\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async PostgreSqlMikroORM.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/dist/src/server.js:58:17)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
