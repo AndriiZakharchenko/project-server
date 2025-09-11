@@ -670,3 +670,15 @@
 [Mon, 08 Sep 2025 14:08:57] INFO GET /api/auth/check - 1ms
 [Mon, 08 Sep 2025 14:08:57] INFO GET /api/products?page=1&limit=2 - 11ms
 [Mon, 08 Sep 2025 14:08:57] INFO GET /api/products?page=1&limit=2 - 6ms
+[Thu, 11 Sep 2025 10:17:27] INFO GET /api/tracks - 31ms
+[Thu, 11 Sep 2025 10:37:30] INFO POST /api/auth/login - 100ms
+[Thu, 11 Sep 2025 10:37:31] INFO GET /api/auth/check - 5ms
+[Thu, 11 Sep 2025 10:37:32] INFO GET /api/auth/check - 1ms
+[Thu, 11 Sep 2025 10:37:32] INFO GET /api/tracks - 1ms
+[Thu, 11 Sep 2025 10:37:32] INFO GET /api/tracks - 0ms
+[Thu, 11 Sep 2025 10:37:32] INFO GET / - 0ms
+[Thu, 11 Sep 2025 10:37:34] INFO GET /api/auth/check - 2ms
+[Thu, 11 Sep 2025 10:37:36] INFO GET /api/auth/check - 2ms
+[Thu, 11 Sep 2025 10:37:36] INFO GET / - 1ms
+[Thu, 11 Sep 2025 10:37:36] INFO GET /api/tracks - 0ms
+[Thu, 11 Sep 2025 10:37:36] INFO GET /api/tracks - 1ms
