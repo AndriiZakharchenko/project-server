@@ -27,7 +27,7 @@ export async function authenticateRequest(req: ICustomRequest, res: Response, ne
     res.cookie('token', newToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       // maxAge: 15 * 60 * 1000,
       maxAge: 20 * 1000,
     });
