@@ -34,6 +34,7 @@ export const ERROR_MESSAGES = {
     PRODUCT_NOT_FOUND: 'Product not found.',
     CART_NOT_FOUND: 'Cart not found.',
     USER_NOT_FOUND: 'User not found.',
+    TRACK_NOT_FOUND: 'Track not found.',
     ROUTE_NOT_FOUND: 'Endpoint not found.',
   },
   405: {

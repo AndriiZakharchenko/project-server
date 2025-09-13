@@ -5,10 +5,12 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import path from 'path';
+import swaggerUi from 'swagger-ui-express';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
 import * as dotenv from 'dotenv';
 import config from '../mikro-orm.config';
+import swaggerSpecs from './config/swagger.config';
 import { updateCartSchema } from './validations/product.validation';
 import { ERROR_MESSAGES } from './constants';
 
@@ -38,6 +40,7 @@ async function startServer() {
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
+  app.options('*', cors()); // Handle preflight requests
   app.use(cookieParser());
   app.use(express.json());
   app.use(fileUpload({
@@ -57,6 +60,40 @@ async function startServer() {
   app.use((req, res, next) => {
     RequestContext.create(orm.em, next);
   });
+
+  // API Root route
+  app.get('/', (req, res) => {
+    res.json({
+      name: 'Your App API',
+      version: '1.0.0',
+      status: 'running',
+      endpoints: {
+        health: '/api/health',
+      },
+      documentation: '/api/docs',
+      timestamp: new Date().toISOString(),
+    });
+  });
+
+  // API root route
+  app.get('/api', (req, res) => {
+    res.json({
+      message: 'Welcome to Your App API',
+      version: '1.0.0',
+      endpoints: '/api/docs',
+      health: '/api/health',
+    });
+  });
+
+  // Swagger Documentation
+  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs, {
+    explorer: true,
+    customCss: '.swagger-ui .topbar { display: none }',
+    customSiteTitle: 'Your App API Documentation',
+    swaggerOptions: {
+      persistAuthorization: true,
+    },
+  }));
 
   // User routes
   router.post('/api/auth/login', UserController.loginUser);

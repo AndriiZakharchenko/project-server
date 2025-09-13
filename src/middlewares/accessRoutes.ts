@@ -1,7 +1,7 @@
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
 export type RouteAccess = {
-  [K in HttpMethod]?: string[]; // ? щоб не вимагав усі методи
+  [K in HttpMethod]?: string[]; // ? to not require all methods
 };
 
 export const ACCESS_MAP: Record<string, RouteAccess> = {
