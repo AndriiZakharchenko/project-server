@@ -30,11 +30,13 @@ async function startServer() {
   logger.info('Connected to PostgreSQL database via MikroORM');
 
   const app = express();
-  // Allow CORS for all domains (UNSAFE in production)
   app.use(cors({
     origin: process.env.NODE_ENV === 'production'
-      ? process.env.CLIENT_URL : 'http://localhost:3000', // Allow frontend to receive cookies
+      ? process.env.CLIENT_URL
+      : ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:3001'],
     credentials: true, // Allow sending and receiving cookies
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   }));
   app.use(cookieParser());
   app.use(express.json());
