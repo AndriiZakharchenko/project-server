@@ -5,12 +5,10 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import path from 'path';
-import swaggerUi from 'swagger-ui-express';
 import { MikroORM } from '@mikro-orm/postgresql';
 import { RequestContext } from '@mikro-orm/core';
 import * as dotenv from 'dotenv';
 import config from '../mikro-orm.config';
-import swaggerSpecs from './config/swagger.config';
 import { updateCartSchema } from './validations/product.validation';
 import { ERROR_MESSAGES } from './constants';
 
@@ -41,7 +39,7 @@ async function startServer() {
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   }));
-  app.options('*', cors()); // Handle preflight requests
+  app.options('*', cors()); // Обробка preflight requests
   app.use(cookieParser());
   app.use(express.json());
   app.use(fileUpload({
@@ -62,7 +60,7 @@ async function startServer() {
     RequestContext.create(orm.em, next);
   });
 
-  // API Root route
+  // API Root route - додайте цей маршрут
   app.get('/', (req, res) => {
     res.json({
       name: 'Your App API',
@@ -70,8 +68,29 @@ async function startServer() {
       status: 'running',
       endpoints: {
         health: '/api/health',
+        auth: {
+          login: 'POST /api/auth/login',
+          register: 'POST /api/auth/register',
+          logout: 'POST /api/auth/logout',
+          check: 'GET /api/auth/check',
+        },
+        products: {
+          getAll: 'GET /api/products',
+          getById: 'GET /api/products/:id',
+          create: 'POST /api/products',
+        },
+        tracks: {
+          getAll: 'GET /api/tracks',
+          create: 'POST /api/tracks',
+        },
+        cart: {
+          get: 'GET /api/profile/cart',
+          update: 'PUT /api/profile/cart',
+          delete: 'DELETE /api/profile/cart',
+          checkout: 'POST /api/profile/cart/checkout',
+        },
       },
-      documentation: '/api/docs',
+      documentation: '/api/docs', // якщо у вас є Swagger
       timestamp: new Date().toISOString(),
     });
   });
@@ -85,16 +104,6 @@ async function startServer() {
       health: '/api/health',
     });
   });
-
-  // Swagger Documentation
-  app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs, {
-    explorer: true,
-    customCss: '.swagger-ui .topbar { display: none }',
-    customSiteTitle: 'Your App API Documentation',
-    swaggerOptions: {
-      persistAuthorization: true,
-    },
-  }));
 
   // User routes
   router.post('/api/auth/login', UserController.loginUser);

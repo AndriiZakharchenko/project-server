@@ -29,7 +29,7 @@ export class TrackService {
       const tracks = await TrackRepository.getTracks();
 
       if (!tracks || JSON.stringify(tracks) === '[]') {
-        return { data: null, error: { message: ERROR_MESSAGES[404].TRACK_NOT_FOUND } };
+        return { data: null, error: { message: ERROR_MESSAGES[404].PRODUCT_NOT_FOUND } };
       }
 
       return { data: tracks, error: null };

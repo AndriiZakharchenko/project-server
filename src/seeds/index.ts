@@ -93,9 +93,9 @@ const seedDatabase = async () => {
     ));
     await Promise.all(trackPromises);
 
-    logger.info('Database successfully seeded!');
+    logger.info('База даних успішно заповнена!');
   } catch (error) {
-    logger.error('Error seeding database:', error);
+    logger.error('Помилка під час заповнення бази даних:', error);
   } finally {
     await pool.end();
   }

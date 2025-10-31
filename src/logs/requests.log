@@ -758,3 +758,4 @@
 [Sat, 13 Sep 2025 16:44:26] INFO GET /api/products?page=2&limit=2 - 88ms
 [Sat, 13 Sep 2025 16:47:49] INFO GET / - 2ms
 [Sat, 13 Sep 2025 16:48:39] INFO GET / - 0ms
+[Sun, 14 Sep 2025 12:12:38] INFO GET /api/docs/swagger-ui-bundle.js - 47ms
