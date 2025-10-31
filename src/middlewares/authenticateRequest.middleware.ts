@@ -21,15 +21,16 @@ export async function authenticateRequest(req: ICustomRequest, res: Response, ne
     const newToken = jwt.sign(
       { id: decoded.id, email: decoded.email, role: decoded.role },
       process.env.PRIVATE_KEY!,
-      { expiresIn: '20s' },
+      { expiresIn: '15min' },
     );
 
     res.cookie('token', newToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-      // maxAge: 15 * 60 * 1000,
-      maxAge: 20 * 1000,
+      domain: process.env.NODE_ENV === 'production' ? 'https://project-client-tau.vercel.app' : undefined,
+      maxAge: 15 * 60 * 1000,
+      // maxAge: 20 * 1000,
     });
   } catch (error) {
     logger.error(error);

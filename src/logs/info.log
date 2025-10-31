@@ -512,3 +512,16 @@
 {"level":"info","message":"HTTP server closed"}
 {"level":"info","message":"Database connection closed"}
 {"level":"error","message":"Error starting server: Connection terminated unexpectedly","stack":"Error: Connection terminated unexpectedly\n    at Connection.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg/lib/client.js:131:73)\n    at Object.onceWrapper (node:events:628:28)\n    at Connection.emit (node:events:514:28)\n    at Connection.emit (node:domain:488:12)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg/lib/connection.js:62:12)\n    at Socket.emit (node:events:526:35)\n    at Socket.emit (node:domain:488:12)\n    at TCP.<anonymous> (node:net:337:12)"}
+{"level":"error","message":"Error starting server: Connection terminated unexpectedly","stack":"Error: Connection terminated unexpectedly\n    at Connection.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg/lib/client.js:131:73)\n    at Object.onceWrapper (node:events:628:28)\n    at Connection.emit (node:events:514:28)\n    at Connection.emit (node:domain:488:12)\n    at Socket.<anonymous> (/Users/andriizakharchenko/Projects/app/server/node_modules/pg/lib/connection.js:62:12)\n    at Socket.emit (node:events:526:35)\n    at Socket.emit (node:domain:488:12)\n    at TCP.<anonymous> (node:net:337:12)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"База даних успішно заповнена!"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"error","name":"DriverException"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
