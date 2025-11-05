@@ -1,5 +1,8 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {
+  Collection, Entity, PrimaryKey, Property,
+} from '@mikro-orm/core';
 import { v4 as uuidv4 } from 'uuid';
+import { Tokens } from './index';
 
 @Entity()
 export class Users {
@@ -14,4 +17,10 @@ export class Users {
 
   @Property()
     password!: string;
+
+  @Property()
+    is_activated!: boolean;
+
+  @Property()
+    activation_link!: string;
 }

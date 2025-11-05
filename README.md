@@ -1,5 +1,9 @@
 # nodejs-gmp-template
 
+#TODO:
+1. check seed on issue
+2. check connections between tables 
+
 
 
 ## Getting started

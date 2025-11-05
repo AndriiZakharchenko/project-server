@@ -7,6 +7,7 @@ export const SUCCESS_MESSAGES = {
     CART_CLEARED: 'Cart cleared successfully.',
     LOGOUT_SUCCESS: 'Logged out successfully.',
     HEALTH_CHECK: 'Healthy',
+    ACCOUNT_ACTIVATED: 'Account activated successfully.',
   },
   201: {
     USER_CREATED: 'User registered successfully.',
@@ -21,6 +22,7 @@ export const ERROR_MESSAGES = {
     EMPTY_CART: 'The cart is empty.',
     INVALID_DATA: 'Required fields are missing or invalid.',
     INVALID_CREDENTIALS: 'Incorrect email or password.',
+    INVALID_ACTIVATION_LINK: 'Invalid activation link.',
   },
   401: {
     UNAUTHORIZED: 'Authentication required.',

@@ -1,8 +1,34 @@
 import pool from '../../pg-pool.config';
 import { products } from '../data/products';
-import { users } from '../data/users';
 import { tracks } from '../data/tracks';
 import { logger } from '../helpers';
+
+const cleanDatabase = async () => {
+  try {
+    logger.info('Початок очищення бази даних...');
+
+    const dropTables = [
+      'DROP TABLE IF EXISTS cart_items CASCADE;',
+      'DROP TABLE IF EXISTS carts CASCADE;',
+      'DROP TABLE IF EXISTS tokens CASCADE;',
+      'DROP TABLE IF EXISTS tracks CASCADE;',
+      'DROP TABLE IF EXISTS products CASCADE;',
+      'DROP TABLE IF EXISTS users CASCADE;',
+    ];
+
+    const dropPromises = dropTables.map((dropQuery) => {
+      logger.info(`Видаляємо таблицю: ${dropQuery}`);
+      return pool.query(dropQuery);
+    });
+
+    await Promise.all(dropPromises);
+
+    logger.info('База даних повністю очищена!');
+  } catch (error) {
+    logger.error('Помилка під час очищення бази даних:', error);
+    throw error;
+  }
+};
 
 const seedDatabase = async () => {
   try {
@@ -12,7 +38,18 @@ const seedDatabase = async () => {
         id UUID PRIMARY KEY,
         role VARCHAR(255) NOT NULL,
         email TEXT NOT NULL,
-        password VARCHAR(255) NOT NULL
+        password VARCHAR(255) NOT NULL,
+        activation_link VARCHAR(255) NOT NULL,
+        is_activated BOOLEAN NOT NULL DEFAULT FALSE
+      );
+    `);
+
+    // Create the `tokens` table if it doesn't exist
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS tokens (
+        id UUID PRIMARY KEY,
+        user_id UUID REFERENCES users(id) ON DELETE CASCADE,
+        refresh_token TEXT NOT NULL UNIQUE
       );
     `);
 
@@ -60,17 +97,6 @@ const seedDatabase = async () => {
       );
     `);
 
-    // Insert users into the `users` table
-    const userPromises = users.map((user) => pool.query(
-      `
-      INSERT INTO users (id, role, email, password)
-      VALUES ($1, $2, $3, $4)
-      ON CONFLICT (id) DO NOTHING;
-    `,
-      [user.id, user.role, user.email, user.password],
-    ));
-    await Promise.all(userPromises);
-
     // Insert products into the `products` table
     const productPromises = products.map((product) => pool.query(
       `
@@ -96,9 +122,22 @@ const seedDatabase = async () => {
     logger.info('База даних успішно заповнена!');
   } catch (error) {
     logger.error('Помилка під час заповнення бази даних:', error);
+  }
+};
+
+const resetDatabase = async () => {
+  try {
+    await cleanDatabase();
+    await seedDatabase();
+    logger.info('База даних успішно перезавантажена!');
+  } catch (error) {
+    logger.error('Помилка під час перезавантаження бази даних:', error);
   } finally {
     await pool.end();
   }
 };
 
-seedDatabase().then(() => {});
+// Запускаємо повне перезавантаження БД
+resetDatabase().then(() => {
+  process.exit(0);
+});

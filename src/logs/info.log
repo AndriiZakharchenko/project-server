@@ -525,3 +525,492 @@
 {"level":"info","message":"Server started on port 8000"}
 {"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
 {"level":"info","message":"Server started on port 8000"}
+{"level":"error","message":"Error starting server: Token entity is missing @PrimaryKey()","name":"MetadataError","stack":"MetadataError: Token entity is missing @PrimaryKey()\n    at Function.fromMissingPrimaryKey (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:130:16)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:36:42)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Token entity is missing @PrimaryKey()","name":"MetadataError","stack":"MetadataError: Token entity is missing @PrimaryKey()\n    at Function.fromMissingPrimaryKey (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:130:16)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:36:42)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Token entity is missing @PrimaryKey()","name":"MetadataError","stack":"MetadataError: Token entity is missing @PrimaryKey()\n    at Function.fromMissingPrimaryKey (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:130:16)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:36:42)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Token entity is missing @PrimaryKey()","name":"MetadataError","stack":"MetadataError: Token entity is missing @PrimaryKey()\n    at Function.fromMissingPrimaryKey (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:130:16)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:36:42)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Token entity is missing @PrimaryKey()","name":"MetadataError","stack":"MetadataError: Token entity is missing @PrimaryKey()\n    at Function.fromMissingPrimaryKey (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:130:16)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:36:42)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"level":"error","message":"Error starting server: Entity 'Token' not found in ./src/entities/token.entity.ts","name":"MetadataError","stack":"MetadataError: Entity 'Token' not found in ./src/entities/token.entity.ts\n    at Function.entityNotFound (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:157:16)\n    at MetadataDiscovery.getEntityClassOrSchema (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:1300:42)\n    at async MetadataDiscovery.discoverDirectories (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:201:29)\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Entity 'Token' not found in ./src/entities/token.entity.ts","name":"MetadataError","stack":"MetadataError: Entity 'Token' not found in ./src/entities/token.entity.ts\n    at Function.entityNotFound (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:157:16)\n    at MetadataDiscovery.getEntityClassOrSchema (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:1300:42)\n    at async MetadataDiscovery.discoverDirectories (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:201:29)\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Entity 'Token' not found in ./src/entities/token.entity.ts","name":"MetadataError","stack":"MetadataError: Entity 'Token' not found in ./src/entities/token.entity.ts\n    at Function.entityNotFound (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:157:16)\n    at MetadataDiscovery.getEntityClassOrSchema (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:1300:42)\n    at async MetadataDiscovery.discoverDirectories (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:201:29)\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Entity 'Token' not found in ./src/entities/token.entity.ts","name":"MetadataError","stack":"MetadataError: Entity 'Token' not found in ./src/entities/token.entity.ts\n    at Function.entityNotFound (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:157:16)\n    at MetadataDiscovery.getEntityClassOrSchema (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:1300:42)\n    at async MetadataDiscovery.discoverDirectories (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:201:29)\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Entity 'Token' not found in ./src/entities/token.entity.ts","name":"MetadataError","stack":"MetadataError: Entity 'Token' not found in ./src/entities/token.entity.ts\n    at Function.entityNotFound (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:157:16)\n    at MetadataDiscovery.getEntityClassOrSchema (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:1300:42)\n    at async MetadataDiscovery.discoverDirectories (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:201:29)\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Entity 'Token' not found in ./src/entities/token.entity.ts","name":"MetadataError","stack":"MetadataError: Entity 'Token' not found in ./src/entities/token.entity.ts\n    at Function.entityNotFound (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:157:16)\n    at MetadataDiscovery.getEntityClassOrSchema (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:1300:42)\n    at async MetadataDiscovery.discoverDirectories (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:201:29)\n    at async MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:43:9)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)\n    at async startServer (/Users/andriizakharchenko/Projects/app/server/src/server.ts:29:15)"}
+{"level":"error","message":"Error starting server: Token.user has wrong 'mappedBy' reference type: uuid instead of Token","name":"MetadataError","stack":"MetadataError: Token.user has wrong 'mappedBy' reference type: uuid instead of Token\n    at Function.fromMessage (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:213:16)\n    at Function.fromWrongReference (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/errors.js:134:34)\n    at MetadataValidator.validateInverseSide (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:155:42)\n    at MetadataValidator.validateBidirectional (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:124:18)\n    at MetadataValidator.validateEntityDefinition (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataValidator.js:45:22)\n    at MetadataDiscovery.processEntity (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:477:24)\n    at MetadataDiscovery.processDiscoveredEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:116:37)\n    at MetadataDiscovery.discover (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/metadata/MetadataDiscovery.js:47:14)\n    at async MikroORM.discoverEntities (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:177:25)\n    at async Function.init (/Users/andriizakharchenko/Projects/app/server/node_modules/@mikro-orm/core/MikroORM.js:49:9)"}
+{"diagnosticCodes":[2304],"level":"error","message":"Error starting server: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/entities/token.entity.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m4\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'ManyToOne'.\n\n\u001b[7m12\u001b[0m   @ManyToOne(() => Users)\n\u001b[7m  \u001b[0m \u001b[91m   ~~~~~~~~~\u001b[0m\n","stack":"TSError: ⨯ Unable to compile TypeScript:\n\u001b[96msrc/entities/token.entity.ts\u001b[0m:\u001b[93m12\u001b[0m:\u001b[93m4\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'ManyToOne'.\n\n\u001b[7m12\u001b[0m   @ManyToOne(() => Users)\n\u001b[7m  \u001b[0m \u001b[91m   ~~~~~~~~~\u001b[0m\n\n    at createTSError (/Users/andriizakharchenko/Projects/app/server/node_modules/ts-node/src/index.ts:859:12)\n    at reportTSError (/Users/andriizakharchenko/Projects/app/server/node_modules/ts-node/src/index.ts:863:19)\n    at getOutput (/Users/andriizakharchenko/Projects/app/server/node_modules/ts-node/src/index.ts:1077:36)\n    at Object.compile (/Users/andriizakharchenko/Projects/app/server/node_modules/ts-node/src/index.ts:1433:41)\n    at Module.m._compile (/Users/andriizakharchenko/Projects/app/server/node_modules/ts-node/src/index.ts:1617:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1295:10)\n    at Object.require.extensions.<computed> [as .ts] (/Users/andriizakharchenko/Projects/app/server/node_modules/ts-node/src/index.ts:1621:12)\n    at Module.load (node:internal/modules/cjs/loader:1091:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:938:12)\n    at Module.require (node:internal/modules/cjs/loader:1115:19)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"code":"42703","file":"parse_target.c","length":133,"level":"error","line":"1065","message":"Помилка під час заповнення бази даних: column \"activation_link\" of relation \"users\" does not exist","name":"error","position":"54","routine":"checkInsertTargets","severity":"ERROR","stack":"error: column \"activation_link\" of relation \"users\" does not exist\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Promise.all (index 0)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:83:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"code":"42501","file":"guc.c","length":126,"level":"error","line":"3601","message":"Помилка під час очищення бази даних: permission denied to set parameter \"session_replication_role\"","name":"error","routine":"set_config_with_handle","severity":"ERROR","stack":"error: permission denied to set parameter \"session_replication_role\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async cleanDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:12:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:149:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"code":"42501","file":"guc.c","length":126,"level":"error","line":"3601","message":"Помилка під час очищення бази даних: permission denied to set parameter \"session_replication_role\"","name":"error","routine":"set_config_with_handle","severity":"ERROR","stack":"error: permission denied to set parameter \"session_replication_role\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async cleanDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:12:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:149:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"code":"42703","file":"parse_target.c","length":130,"level":"error","line":"1065","name":"InvalidFieldNameException","position":"57","routine":"checkInsertTargets","severity":"ERROR"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"code":"42501","file":"guc.c","length":126,"level":"error","line":"3601","message":"Помилка під час очищення бази даних: permission denied to set parameter \"session_replication_role\"","name":"error","routine":"set_config_with_handle","severity":"ERROR","stack":"error: permission denied to set parameter \"session_replication_role\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async cleanDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:12:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:149:5)"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"code":"08P01","file":"postgres.c","length":137,"level":"error","line":"1733","message":"Помилка під час заповнення бази даних: bind message supplies 4 parameters, but prepared statement \"\" requires 6","name":"error","routine":"exec_bind_message","severity":"ERROR","stack":"error: bind message supplies 4 parameters, but prepared statement \"\" requires 6\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Promise.all (index 0)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:110:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:145:5)"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"code":"08P01","file":"postgres.c","length":137,"level":"error","line":"1733","message":"Помилка під час заповнення бази даних: bind message supplies 4 parameters, but prepared statement \"\" requires 6","name":"error","routine":"exec_bind_message","severity":"ERROR","stack":"error: bind message supplies 4 parameters, but prepared statement \"\" requires 6\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Promise.all (index 0)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:110:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:143:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"code":"40P01","detail":"Process 450222 waits for AccessExclusiveLock on object 16548 of class 2606 of database 16389; blocked by process 450221.\nProcess 450221 waits for AccessExclusiveLock on relation 16521 of database 16389; blocked by process 450222.","file":"deadlock.c","hint":"See server log for query details.","length":345,"level":"error","line":"1130","message":"Помилка під час очищення бази даних: deadlock detected","name":"error","routine":"DeadLockReport","severity":"ERROR","stack":"error: deadlock detected\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Promise.all (index 5)\n    at async cleanDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:25:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:142:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"level":"info","message":"База даних успішно заповнена!"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"code":"42601","file":"scan.l","length":91,"level":"error","line":"1244","message":"Помилка під час заповнення бази даних: syntax error at or near \")\"","name":"error","position":"193","routine":"scanner_yyerror","severity":"ERROR","stack":"error: syntax error at or near \")\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:48:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:131:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"code":"42601","file":"scan.l","length":91,"level":"error","line":"1244","message":"Помилка під час заповнення бази даних: syntax error at or near \")\"","name":"error","position":"193","routine":"scanner_yyerror","severity":"ERROR","stack":"error: syntax error at or near \")\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:48:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:131:5)"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":105,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"code":"42601","file":"scan.l","length":91,"level":"error","line":"1244","message":"Помилка під час заповнення бази даних: syntax error at or near \")\"","name":"error","position":"184","routine":"scanner_yyerror","severity":"ERROR","stack":"error: syntax error at or near \")\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:48:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:131:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":105,"level":"error","line":"1449","name":"TableNotFoundException","position":"20","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"code":"42601","file":"scan.l","length":91,"level":"error","line":"1244","message":"Помилка під час заповнення бази даних: syntax error at or near \")\"","name":"error","position":"184","routine":"scanner_yyerror","severity":"ERROR","stack":"error: syntax error at or near \")\"\n    at /Users/andriizakharchenko/Projects/app/server/node_modules/pg-pool/index.js:45:11\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async seedDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:48:5)\n    at async resetDatabase (/Users/andriizakharchenko/Projects/app/server/src/seeds/index.ts:131:5)"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"43","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"43","routine":"parserOpenTable","severity":"ERROR"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"43","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"42P01","file":"parse_relation.c","length":104,"level":"error","line":"1449","name":"TableNotFoundException","position":"43","routine":"parserOpenTable","severity":"ERROR"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"level":"info","message":"База даних успішно заповнена!"}
+{"level":"error"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"534-5.7.9 Application-specific password required. For more information, go to\n534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor a640c23a62f3a-b723fa00a24sm489569666b.52 - gsmtp","responseCode":534}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"534-5.7.9 Application-specific password required. For more information, go to\n534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor a640c23a62f3a-b723fe37b7asm494238866b.60 - gsmtp","responseCode":534}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Gracefully shutting down..."}
+{"level":"info","message":"HTTP server closed"}
+{"level":"info","message":"Database connection closed"}
+{"level":"info","message":"Початок очищення бази даних..."}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS cart_items CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS carts CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tokens CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS tracks CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS products CASCADE;"}
+{"level":"info","message":"Видаляємо таблицю: DROP TABLE IF EXISTS users CASCADE;"}
+{"level":"info","message":"База даних повністю очищена!"}
+{"level":"info","message":"База даних успішно заповнена!"}
+{"level":"info","message":"Connected to PostgreSQL database via MikroORM"}
+{"level":"info","message":"Server started on port 8000"}

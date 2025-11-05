@@ -9,7 +9,11 @@ export interface IUser {
   role: string,
   email: string,
   password: string,
+  is_activated: boolean,
+  activation_link: string,
 }
+
+export type UserDTOType = Omit<IUser, 'password' | 'activation_link'>;
 
 export interface ICustomRequest extends Request {
   user?: Omit<IUser, 'password'>;

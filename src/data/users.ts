@@ -6,5 +6,7 @@ export const users:IUser[] = [
     role: 'admin',
     email: 'test@example.com',
     password: 'password',
+    is_activated: false,
+    activation_link: '',
   },
 ];

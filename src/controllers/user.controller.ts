@@ -5,8 +5,18 @@ import { ICustomRequest } from '../types';
 
 export class UserController {
   static async registerUser(req: Request, res: Response) {
-    const data = await UserService.registerUser(req.body);
-    return res.status(getStatus(data.error)).json(data);
+    const result = await UserService.registerUser(req.body);
+
+    if (result.data) {
+      res.cookie('refreshToken', result.data.tokens.refreshToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        path: '/',
+        maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+      });
+    }
+    return res.status(getStatus(result.error)).json(result);
   }
 
   static async loginUser(req: ICustomRequest, res: Response) {
@@ -34,5 +44,11 @@ export class UserController {
 
   static async check(req: ICustomRequest, res: Response) {
     return res.status(200).json({ data: req.user || null, error: null });
+  }
+
+  static async activateLink(req: ICustomRequest, res: Response) {
+    const result = await UserService.activateLink(req.params.link);
+
+    return res.status(getStatus(result.error)).json(result);
   }
 }

@@ -54,11 +54,12 @@ async function startServer() {
   app.get('/api/health', healthCheck(orm));
   // Log all requests
   app.use(loggerMiddleware);
-
   // MikroORM RequestContext middleware
   app.use((req, res, next) => {
     RequestContext.create(orm.em, next);
   });
+
+  app.use('/api', router);
 
   // API Root route - додайте цей маршрут
   app.get('/', (req, res) => {
@@ -106,29 +107,29 @@ async function startServer() {
   });
 
   // User routes
-  router.post('/api/auth/login', UserController.loginUser);
-  router.post('/api/auth/register', UserController.registerUser);
-  router.post('/api/auth/logout', UserController.logoutUser);
-  router.get('/api/auth/check', authenticateRequest, UserController.check);
+  router.post('/auth/login', UserController.loginUser);
+  router.post('/auth/register', UserController.registerUser);
+  router.post('/auth/logout', UserController.logoutUser);
+  router.post('/auth/activate/:link', UserController.activateLink);
+  router.post('/auth/refresh', UserController.activateLink);
+  router.get('/auth/check', authenticateRequest, UserController.check);
 
   // Product routes
-  router.get('/api/products', ProductController.getAllProducts);
-  router.get('/api/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
-  router.post('/api/products', authenticateRequest, authorizeRequest, ProductController.addProduct);
+  router.get('/products', ProductController.getAllProducts);
+  router.get('/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
+  router.post('/products', authenticateRequest, authorizeRequest, ProductController.addProduct);
 
   // Track routes
-  router.get('/api/tracks', TrackController.getTracks);
-  router.post('/api/tracks', authenticateRequest, authorizeRequest, TrackController.addTrack);
+  router.get('/tracks', TrackController.getTracks);
+  router.post('/tracks', authenticateRequest, authorizeRequest, TrackController.addTrack);
 
   // // Cart routes
-  router.get('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);
-  router.put('/api/profile/cart', authenticateRequest, authorizeRequest, validateSchema(updateCartSchema), CartController.updateCart);
-  router.delete('/api/profile/cart', authenticateRequest, authorizeRequest, CartController.deleteCart);
+  router.get('/profile/cart', authenticateRequest, authorizeRequest, CartController.getCart);
+  router.put('/profile/cart', authenticateRequest, authorizeRequest, validateSchema(updateCartSchema), CartController.updateCart);
+  router.delete('/profile/cart', authenticateRequest, authorizeRequest, CartController.deleteCart);
 
   // Order routes
-  router.post('/api/profile/cart/checkout', authenticateRequest, authorizeRequest, OrderController.createOrder);
-
-  app.use(router);
+  router.post('/profile/cart/checkout', authenticateRequest, authorizeRequest, OrderController.createOrder);
 
   // 404 Route handler
   app.all('*', (req, res) => {

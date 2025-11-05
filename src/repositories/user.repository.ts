@@ -3,9 +3,25 @@ import { Users } from '../entities';
 import { IUser } from '../types';
 
 export class UserRepository {
-  static getUserById(id: string) {
+  static async registerUser({
+    role, email, password, is_activated, activation_link,
+  }: IUser) {
     const em = RequestContext.getEntityManager();
-    return em!.findOne(Users, { id });
+    const user = em!.create(Users, {
+      role,
+      email,
+      password,
+      is_activated,
+      activation_link,
+    });
+
+    await em!.persistAndFlush(user);
+    return user;
+  }
+
+  static loginUser({ email, password }: IUser) {
+    const em = RequestContext.getEntityManager();
+    return em!.findOne(Users, { email, password });
   }
 
   static getUserByEmail(email: string) {
@@ -13,19 +29,13 @@ export class UserRepository {
     return em!.findOne(Users, { email });
   }
 
-  static async registerUser({ role = 'viewer', email, password }: IUser) {
+  static getUserByActivationLink(link: string) {
     const em = RequestContext.getEntityManager();
-    const user = em!.create(Users, {
-      role,
-      email,
-      password,
-    });
-
-    return em!.persistAndFlush(user);
+    return em!.findOne(Users, { activation_link: link });
   }
 
-  static loginUser({ email, password }: IUser) {
+  static updateUser(user: IUser) {
     const em = RequestContext.getEntityManager();
-    return em!.findOne(Users, { email, password });
+    return em!.persistAndFlush(user);
   }
 }
