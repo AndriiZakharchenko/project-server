@@ -1,29 +1,29 @@
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
 export type RouteAccess = {
-  [K in HttpMethod]?: string[]; // ? щоб не вимагав усі методи
+  [K in HttpMethod]?: string[]; // Array of roles allowed to access the route with the given method
 };
 
 export const ACCESS_MAP: Record<string, RouteAccess> = {
-  '/api/products': {
+  '/products': {
     GET: ['admin', 'viewer'],
     POST: ['admin'],
     PUT: ['admin'],
     DELETE: ['admin'],
   },
-  '/api/tracks': {
+  '/tracks': {
     GET: ['admin', 'viewer'],
     POST: ['admin'],
   },
-  '/api/profile/cart': {
+  '/profile/cart': {
     GET: ['admin', 'viewer'],
     PUT: ['admin', 'viewer'],
     DELETE: ['admin', 'viewer'],
   },
-  '/api/auth/login': {
+  '/auth/login': {
     POST: ['*'],
   },
-  '/api/auth/register': {
+  '/auth/register': {
     POST: ['*'],
   },
 };

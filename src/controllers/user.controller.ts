@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { getStatus } from '../helpers';
-import { UserService } from '../services';
+import { getStatus, setRefreshTokenCookie } from '../helpers';
+import { UserService, TokenService } from '../services';
 import { ICustomRequest } from '../types';
 
 export class UserController {
@@ -8,38 +8,27 @@ export class UserController {
     const result = await UserService.registerUser(req.body);
 
     if (result.data) {
-      res.cookie('refreshToken', result.data.tokens.refreshToken, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-        path: '/',
-        maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-      });
+      setRefreshTokenCookie(res, result.data.tokens.refreshToken);
     }
+
     return res.status(getStatus(result.error)).json(result);
   }
 
   static async loginUser(req: ICustomRequest, res: Response) {
-    const { data, error } = await UserService.loginUser(req.body);
+    const result = await UserService.loginUser(req.body);
 
-    if (data) {
-      req.user = data.user;
-
-      res.cookie('token', data.token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-        path: '/',
-        maxAge: 20 * 1000,
-      });
+    if (result.data) {
+      setRefreshTokenCookie(res, result.data.tokens.refreshToken);
     }
 
-    return res.status(getStatus(error)).json({ data: data?.token || null, error });
+    return res.status(getStatus(result.error)).json(result);
   }
 
-  static logoutUser(req: ICustomRequest, res: Response) {
-    res.clearCookie('token');
-    return res.status(200).json();
+  static async logoutUser(req: ICustomRequest, res: Response) {
+    const result = await UserService.logoutUser(req.cookies.refreshToken);
+
+    res.clearCookie('refreshToken');
+    return res.status(getStatus(result.error)).json(result);
   }
 
   static async check(req: ICustomRequest, res: Response) {
@@ -48,6 +37,20 @@ export class UserController {
 
   static async activateLink(req: ICustomRequest, res: Response) {
     const result = await UserService.activateLink(req.params.link);
+
+    if (result.error?.message) {
+      return res.status(getStatus(result.error)).json(result);
+    }
+
+    return res.redirect(process.env.CLIENT_URL!);
+  }
+
+  static async refreshToken(req: ICustomRequest, res: Response) {
+    const result = await TokenService.refreshToken(req.cookies.refreshToken);
+
+    if (result.data) {
+      setRefreshTokenCookie(res, result.data.tokens.refreshToken);
+    }
 
     return res.status(getStatus(result.error)).json(result);
   }

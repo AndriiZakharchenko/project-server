@@ -103,3 +103,9 @@
 {"level":"error"}
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"534-5.7.9 Application-specific password required. For more information, go to\n534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor a640c23a62f3a-b723fa00a24sm489569666b.52 - gsmtp","responseCode":534}
 {"code":"EAUTH","command":"AUTH PLAIN","level":"error","response":"534-5.7.9 Application-specific password required. For more information, go to\n534 5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor a640c23a62f3a-b723fe37b7asm494238866b.60 - gsmtp","responseCode":534}
+{"expiredAt":"2025-11-06T11:00:09.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-11-06T11:00:09.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"expiredAt":"2025-11-06T11:00:09.000Z","level":"error","message":"jwt expired","name":"TokenExpiredError"}
+{"level":"error","message":"invalid signature","name":"JsonWebTokenError"}
+{"level":"error","message":"invalid signature","name":"JsonWebTokenError"}
+{"level":"error","message":"invalid signature","name":"JsonWebTokenError"}

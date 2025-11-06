@@ -16,7 +16,7 @@ export interface IUser {
 export type UserDTOType = Omit<IUser, 'password' | 'activation_link'>;
 
 export interface ICustomRequest extends Request {
-  user?: Omit<IUser, 'password'>;
+  user?: Omit<IUser, 'password' | 'activation_link'>;
 }
 
 export interface IProduct {

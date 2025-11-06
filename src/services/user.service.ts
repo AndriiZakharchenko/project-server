@@ -62,20 +62,16 @@ export class UserService {
       }
 
       // Check if password is correct
-      if (user && (await bcrypt.compare(password, user.password))) {
-        const token = jwt.sign(
-          { id: user.id, email, role: user.role },
-          process.env.PRIVATE_KEY!,
-          {
-            expiresIn: '15m',
-          },
-        );
-
-        return { data: { user, token }, error: null };
+      if (user && !(await bcrypt.compare(password, user.password))) {
+        // Return error if credentials are invalid
+        return { data: null, error: { message: ERROR_MESSAGES[400].INVALID_CREDENTIALS } };
       }
 
-      // Return error if credentials are invalid
-      return { data: null, error: { message: ERROR_MESSAGES[400].INVALID_CREDENTIALS } };
+      const userPayload = new UserDTO(user);
+      const tokens = TokenService.generateTokens({ ...userPayload });
+      await TokenRepository.saveUserToken(user.id, tokens.refreshToken);
+
+      return { data: { user, tokens }, error: null };
     } catch (error) {
       console.log('Login error', error);
       logger.error(error);
@@ -95,6 +91,21 @@ export class UserService {
       await UserRepository.updateUser(user);
 
       return { data: { message: SUCCESS_MESSAGES[200].ACCOUNT_ACTIVATED }, error: null };
+    } catch (error) {
+      logger.error(error);
+      return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };
+    }
+  }
+
+  static async logoutUser(refreshToken: string) {
+    try {
+      const token = await TokenRepository.removeToken(refreshToken);
+
+      if (token) {
+        return { data: token, error: null };
+      }
+
+      return { data: null, error: { message: ERROR_MESSAGES['401'].TOKEN_NOT_FOUND } };
     } catch (error) {
       logger.error(error);
       return { data: null, error: { message: ERROR_MESSAGES[500].SERVER_ERROR } };

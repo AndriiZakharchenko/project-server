@@ -27,6 +27,8 @@ export const ERROR_MESSAGES = {
   401: {
     UNAUTHORIZED: 'Authentication required.',
     TOKEN_REQUIRED: 'Access token is missing.',
+    TOKEN_NOT_FOUND: 'Token not found',
+    ROLE_NOT_FOUND: 'User role not found.',
   },
   403: {
     FORBIDDEN: 'Access denied.',

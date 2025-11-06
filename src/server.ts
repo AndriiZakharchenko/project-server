@@ -111,11 +111,11 @@ async function startServer() {
   router.post('/auth/register', UserController.registerUser);
   router.post('/auth/logout', UserController.logoutUser);
   router.post('/auth/activate/:link', UserController.activateLink);
-  router.post('/auth/refresh', UserController.activateLink);
-  router.get('/auth/check', authenticateRequest, UserController.check);
+  router.post('/auth/refresh', UserController.refreshToken);
+  router.get('/auth/check', UserController.check);
 
   // Product routes
-  router.get('/products', ProductController.getAllProducts);
+  router.get('/products', authenticateRequest, authorizeRequest, ProductController.getAllProducts);
   router.get('/products/:productId', authenticateRequest, authorizeRequest, ProductController.getProductById);
   router.post('/products', authenticateRequest, authorizeRequest, ProductController.addProduct);
 

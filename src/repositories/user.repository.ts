@@ -19,9 +19,9 @@ export class UserRepository {
     return user;
   }
 
-  static loginUser({ email, password }: IUser) {
+  static getUserById(id: string) {
     const em = RequestContext.getEntityManager();
-    return em!.findOne(Users, { email, password });
+    return em!.findOne(Users, { id });
   }
 
   static getUserByEmail(email: string) {
